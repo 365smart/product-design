@@ -2,26 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-  padding: 16px;
   width: 100%;
+  height:360px;
+  background-color:red;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 18px;
-  line-height: 24px;
-  background: ${props => props.bgColor ? props.bgColor : 'rebeccapurple'};
-  position:sticky;
-  top:0px;
+  background-image:url("./images/Products/bella1.jpg");
+  background-size:cover;
 `;
 
-function Header(props) {
+function Splash(props) {
   return (
-    <Div {...props}>
+    <Div  {...props}>
       {props.children}
       {props.label}
     </Div>
   );
 }
 
-export default Header;
+export default Splash;

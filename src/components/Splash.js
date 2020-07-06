@@ -8,15 +8,18 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image:url("./images/Products/bella1.jpg");
-  background-size:cover;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+  }
 `;
 
 function Splash(props) {
   return (
-    <Div  {...props}>
-      {props.children}
-      {props.label}
+    <Div>
+      <img src={require('../img/Products/' + props.name + '.jpg')}/>
     </Div>
   );
 }

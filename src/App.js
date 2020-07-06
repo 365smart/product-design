@@ -6,7 +6,7 @@ function App() {
   const [alert, setAlert] = useState(true);
   return (
     <div>
-      <img src='./static/img/Product/bella1.jpg'></img>
+      <Splash name="bella1"/>
       <Header label="365 Product Design" bgColor="orange" >
         <span role="img" aria-label="smiley">😀</span>
       </Header>

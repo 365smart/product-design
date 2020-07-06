@@ -1,5 +1,6 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import '../src/index.css';
 
 const viewports = {
   mobile: {

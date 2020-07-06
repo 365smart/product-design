@@ -2,27 +2,35 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-  padding: 16px;
+  padding: 8px;
   display: flex;
   flex: 0 1 auto;
-  width:25%;
-  height:256px;
+  width:33.3333%;
   min-width:320px;
+  max-width:374px;
+  height:256px;
   align-items: center;
   justify-content: center;
-  border:1px solid red; 
   background-color:$myColor;
   box-sizing: border-box;
-  @media only screen and (max-width: 768px) {
-    background-color:red;
-  }
+  .card{
+    background:#ffffff;
+    border-radius:16px;
+    border:1px solid #C5C5C9;
+    width:100%;
+    height:100%;
+    //   @media only screen and (max-width: 768px) {
+//     background-color:red;
+//   }
+}
 `;
 
 function Card(props) {
     return (
         <Div {...props}>
-            {props.children}
-            {props.label}
+            <div class="card">
+
+            </div>
         </Div>
     );
 }

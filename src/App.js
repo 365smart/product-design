@@ -1,25 +1,24 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { Button, Header, Body, Card, Splash, Footer } from './components';
+import { Button, Header, Body, Card, Splash, Footer, Menusection } from './components';
 
 function App() {
   const [alert, setAlert] = useState(true);
   return (
     <div>
-      <Splash name="bella1"/>
-      <Header label="365 Product Design" bgColor="orange" >
-        <span role="img" aria-label="smiley">😀</span>
+      <Splash name="doritos" />
+      <Header name="365Dining">
+
       </Header>
       <Body>
-        <Card>test1</Card>
-        <Card>test1</Card>
-        <Card>test1</Card>
-        <Card>test1</Card>
-        <Card>test1</Card>
-        <Card>test1</Card>
-        <Card>test1</Card>
-        <Card>test1</Card>
-      </ Body>
+        <Menusection name="Specials">
+        </ Menusection>
+        <Menusection name="Lunch">
+        </ Menusection>
+        <Menusection name="Drinks">
+        </ Menusection>
+      </Body>
+
       <Footer />
 
       {/* {alert === true ?

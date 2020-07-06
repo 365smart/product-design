@@ -19,7 +19,7 @@ const Div = styled.div`
 function Splash(props) {
   return (
     <Div>
-      <img src={require('../img/Products/' + props.name + '.jpg')}/>
+      <img src={require('../img/Products/Upsales/' + props.name + '.jpg')} />
     </Div>
   );
 }

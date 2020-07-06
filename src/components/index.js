@@ -3,6 +3,7 @@ import Button from "./Button";
 import Card from "./Card";
 import Footer from "./Footer";
 import Header from "./Header";
+import Menusection from "./Menusection";
 import Splash from "./Splash";
 
 export {
@@ -11,5 +12,7 @@ export {
     Card,
     Footer,
     Header,
+    Menusection,
     Splash
 }
+

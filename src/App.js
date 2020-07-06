@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
-import styled from 'styled-components';
-import { Button, Header, Body, Card, Splash, Footer } from './components';
+import styled, { ThemeProvider } from 'styled-components'
+import theme from './theme'
+
+import { Button, Header, Body, Card, Splash, Footer } from './components'
 
 function App() {
   const [alert, setAlert] = useState(true);
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Splash name="bella1"/>
-      <Header label="365 Product Design" bgColor="orange" >
-        <span role="img" aria-label="smiley">😀</span>
-      </Header>
+      <Header
+        label="365 Product Design"
+        bg="primary"
+        leftNav={<span role="img" aria-label="back">Left Nav</span>}
+        rightNav={<span role="img" aria-label="next">Right Nav</span>}/>
       <Body>
         <Card>test1</Card>
         <Card>test1</Card>
@@ -19,7 +23,7 @@ function App() {
         <Card>test1</Card>
         <Card>test1</Card>
         <Card>test1</Card>
-      </ Body>
+      </Body>
       <Footer />
 
       {/* {alert === true ?
@@ -38,7 +42,7 @@ function App() {
         )
       } */}
 
-    </div>
+    </ThemeProvider>
   );
 }
 

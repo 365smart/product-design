@@ -1,17 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
+import styled from 'styled-components';
+import { Div, Text } from './atoms';
+
+<<<<<<< HEAD
 const Div = styled.div`
   width: 100vw;
   height:160px;
   display: flex;
   flex-direction:column;
+=======
+const Container = styled(Div)`
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  height: 64px;
+>>>>>>> 5180f52cc536724e563b5faf29446a4c05ef3b21
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 18px;
   line-height: 24px;
-  background: ${props => props.bgColor ? props.bgColor : 'rebeccapurple'};
   position:sticky;
   top:0px;
   overflow: hidden;
@@ -48,8 +58,26 @@ const Div = styled.div`
   }
 `;
 
+const Left = styled(Div)`
+  &:active {
+    filter: brightness(.75);
+  }
+`;
+
+const Right = styled(Div)`
+  &:active {
+    filter: brightness(.75);
+  }
+`;
+
+const Center = styled(Text)`
+  flex: 1;
+  text-align: center;
+`
+
 function Header(props) {
   return (
+<<<<<<< HEAD
     <Div {...props}>
       {props.children}
       {props.label}
@@ -57,7 +85,20 @@ function Header(props) {
       <div className="headerLogo"><img src={require('../img/Diners/' + props.name + '-logo.png')} /></div>
       <div className="dinerStatus">Open 10:00 am</div>
     </Div>
+=======
+    <Container {...props}>
+      <Left>{props.leftNav}</Left>
+      <Center>{props.label}</Center>
+      <Right>{props.rightNav}</Right>
+    </Container>
+>>>>>>> 5180f52cc536724e563b5faf29446a4c05ef3b21
   );
+}
+
+Header.propTypes = {
+  label: PropTypes.string,
+  leftNav: PropTypes.object,
+  rightNav: PropTypes.object,
 }
 
 export default Header;

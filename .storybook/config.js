@@ -6,6 +6,18 @@ import theme from '../src/theme';
 
 import '../src/index.css';
 
+const Story = styled.div`
+  #story-root {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+  }
+`;
+
 const viewports = {
   mobile: {
     name: 'Mobile',
@@ -60,18 +72,6 @@ addParameters({
     inline: true,
   }
 });
-
-const Story = styled.div`
-  #story-root {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    width: 100%;
-  }
-`;
 
 addDecorator(withInfo);
 addDecorator(storyFn => (

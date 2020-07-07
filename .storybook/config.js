@@ -1,5 +1,9 @@
+import React from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import styled, { ThemeProvider } from 'styled-components';
+import theme from '../src/theme';
+
 import '../src/index.css';
 
 const viewports = {
@@ -57,6 +61,23 @@ addParameters({
   }
 });
 
+const Story = styled.div`
+  #story-root {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+  }
+`;
+
 addDecorator(withInfo);
+addDecorator(storyFn => (
+  <ThemeProvider theme={theme}>
+    <Story>{storyFn()}</Story>
+  </ThemeProvider>
+))
 // automatically import all files ending in *.stories.js
 configure(require.context('../src', true, /\.stories\.js$/), module);

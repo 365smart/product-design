@@ -27,7 +27,9 @@ function Button(props) {
 }
 
 Button.propTypes = {
+  /** label/text */
   label: PropTypes.string,
+  /** background color */
   bgColor: PropTypes.string,
 }
 

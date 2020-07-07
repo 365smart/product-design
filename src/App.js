@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Button, Header, Body, Card, Splash, Footer, Menusection } from './components';
-import styled, { ThemeProvider } from 'styled-components'
+import { Header, Body, Card, Splash, Footer, Menusection } from './components';
+import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 
 
@@ -9,12 +9,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Splash name="doritos"/>
-      <Header
-        label="365 Product Design"
-        name="365Dining"
-        bg="primary"
-        leftNav={<span role="img" aria-label="back">Left Nav</span>}
-        rightNav={<span role="img" aria-label="next">Right Nav</span>}/>
+      <Header name="365Dining" status="Open at 10:00 AM"/>
       <Body>
         <Menusection name="Specials"/>
         <Menusection name="Lunch"/>

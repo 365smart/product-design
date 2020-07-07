@@ -3,6 +3,4 @@ import { Header } from '../';
 
 export default { title: 'Header' };
 
-export const withText = () => <Header label="Header"/>;
-
-export const withBgColor = () => <Header bgColor="hotpink" label="Hot Pink Header"/>;
+export const withText = () => <Header name="365Dining" status="Open at 10:00 AM"/>;

@@ -16,13 +16,7 @@ const Container = styled(Div)`
   position: sticky;
   top: 0px;
   overflow: hidden;
-  padding-bottom: 32px;
 `;
-
-const Center = styled(Text)`
-  flex: 1;
-  text-align: center;
-`
 
 const Background = styled.img`
   position: absolute;
@@ -33,7 +27,6 @@ const Background = styled.img`
 `;
 
 const Time = styled(Div)`
-  background-color: #ffffff;
   height: 32px;
   position: absolute;
   bottom: 0px;
@@ -41,31 +34,32 @@ const Time = styled(Div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
 `
 
 const Logo = styled.img`
   object-fit: contain;
-  height:100%;
+  height: 100%;
 `;
 
 function Header(props) {
   return (
-    <Container {...props}>
-      <Logo src={require('../img/Diners/' + props.name + '-logo.png')} />
-      <Background src={require('../img/Diners/' + props.name + '-logobg.jpg')} />
-      <Time className="dinerStatus">Open 10:00 am</Time>
+    <Container {...props} pb="md">
+      <Logo src={require('../img/Diners/' + props.name + '-logo.png')} alt={props.name} />
+      <Background src={require('../img/Diners/' + props.name + '-logobg.jpg')} alt={props.name} />
+      <Time bg="white" px="xs">
+        <Text fontSize="sm">{props.status}</Text>
+      </Time>
     </Container>
   );
 }
 
 Header.propTypes = {
-  label: PropTypes.string,
-  leftNav: PropTypes.object,
-  rightNav: PropTypes.object,
+  /** name of diner for themeing */
+  name: PropTypes.string,
+  /** status of diner */
+  status: PropTypes.object,
 }
 
 export default Header;

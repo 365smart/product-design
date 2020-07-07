@@ -1,24 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Div = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1 1 auto;
-  align-items: flex-start;
-  justify-content: center;
-  color: #000000;
-  font-size: 18px;
-  line-height: 24px;
-  padding-bottom:50vh;
-`;
+import { Div } from './atoms';
 
 function Body(props) {
     return (
-        <Div {...props}>
-            {props.children}
-            {props.label}
-        </Div>
+      <Div
+        bg="white"
+        flex="1 1 auto"
+        flexWrap="wrap"
+        alignItems="flex-start"
+        justify-content="center"
+        fontSize="sm"
+        lineHeight="sm"
+        pb="50vh"
+        {...props}>
+          {props.children}
+          {props.label}
+      </Div>
     );
 }
 

@@ -17,12 +17,14 @@ const StyledDiv = styled(Div)`
   }
 `;
 
+
 function Splash(props) {
   return (
     <StyledDiv>
-      <img src={require('../img/Products/Upsales/' + props.name + '.jpg')} alt={props.name}/>
+      <img src={require('../img/Products/Upsales/' + props.name + '.jpg')} alt={props.name} />
     </StyledDiv>
   );
 }
+
 
 export default Splash;

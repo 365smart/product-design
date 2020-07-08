@@ -1,37 +1,82 @@
 import React from 'react';
 import styled from 'styled-components';
+import Buttoncontrol from './Buttoncontrol';
+import { Div, Text } from './atoms';
 
-const Div = styled.div`
-  padding: 8px;
+const Container = styled(Div)`
   display: flex;
   flex: 0 1 auto;
   width:33.3333%;
-  min-width:320px;
-  max-width:374px;
-  height:256px;
   align-items: center;
   justify-content: center;
-  background-color:$myColor;
   box-sizing: border-box;
-  .card{
+  position:relative;
+`;
+
+const Plate = styled(Div)`
     background:#ffffff;
     border-radius:16px;
+    overflow:hidden;
     border:1px solid #C5C5C9;
-    width:100%;
-    height:100%;
     //   @media only screen and (max-width: 768px) {
 //     background-color:red;
 //   }
-}
+`;
+const Splash = styled(Div)`
+height: 160px;
+width:100%;
+overflow:hidden;
+`;
+const Image = styled.img`
+  object-fit: contain;
+  height: 100%;
+  width:100%;
+`;
+const Controls = styled(Div)`
+position:absolute;
+top:0px;
+left:0px;
+right:0px;
+display:flex;
+flex:1 1 auto;
+padding:8px;
+justify-content:flex-end;
+`;
+const Statrow = styled(Div)`
+display:flex;
+width:100%;
+justify-content:space-between;
+align-items:center;
+`;
+
+const Stat = styled(Div)`
+
+`;
+
+
+const Dietary = styled(Div)`
+
 `;
 
 function Card(props) {
     return (
-        <Div {...props}>
-            <div class="card">
+        <Container {...props} p="xxs">
+            <Plate>
+                <Splash>
+                    <Controls>
+                        <Buttoncontrol />
+                        <Buttoncontrol />
+                    </Controls>
+                    <Image src={require('../img/Products/' + props.name + '.jpg')} alt={props.name} />
+                </Splash>
+                <Statrow fontSize="sm" p="xs" >
+                    <Stat>{props.name}</Stat>
+                    <Stat>{props.price}</Stat>
+                </Statrow>
+                <Dietary></Dietary>
 
-            </div>
-        </Div>
+            </Plate>
+        </Container>
     );
 }
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styled from 'styled-components';
 import { Div, Text } from './atoms';
+
 
 const Container = styled(Div)`
   width: 100vw;
@@ -15,6 +15,7 @@ const Container = styled(Div)`
   line-height: 24px;
   position: sticky;
   top: 0px;
+  z-index:1;
   overflow: hidden;
 `;
 
@@ -28,6 +29,7 @@ const Background = styled.img`
 
 const Time = styled(Div)`
   height: 32px;
+  font-weight:700;
   position: absolute;
   bottom: 0px;
   margin: auto;
@@ -46,8 +48,8 @@ const Logo = styled.img`
 function Header(props) {
   return (
     <Container {...props} pb="md">
-      <Logo src={require('../img/Diners/' + props.name + '-logo.png')} alt={props.name} />
-      <Background src={require('../img/Diners/' + props.name + '-logobg.jpg')} alt={props.name} />
+      <Logo src={require('../img/Diners/Logos/' + props.name + '.png')} alt={props.name} />
+      <Background src={require('../img/Diners/BG/' + props.name + '.jpg')} alt={props.name} />
       <Time bg="white" px="xs">
         <Text fontSize="sm">{props.status}</Text>
       </Time>

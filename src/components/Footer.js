@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import Footernav from './Footernav';
+import Footermessage from './Footermessage';
+import Slider from './Slider';
+import { Div } from './atoms';
 
-const Div = styled.div`
-  padding: 16px;
+const Container = styled(Div)`
   display: flex;
-  align-items: center;
+  flex-direction:column;
+  align-items: flex-bottom;
   justify-content: center;
-  color: white;
-  font-size: 18px;
-  line-height: 24px;
-  background: ${props => props.bgColor ? props.bgColor : 'rebeccapurple'};
   position:fixed;
   bottom:0px;
   left:0px;
@@ -18,10 +18,11 @@ const Div = styled.div`
 
 function Footer(props) {
   return (
-    <Div {...props}>
-      {props.children}
-      {props.label}
-    </Div>
+    <Container {...props}>
+      <Slider message="Tap for more choices" />
+      <Footermessage message="Scan an item at any time" />
+      <Footernav />
+    </Container>
   );
 }
 

@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
-import { Header, Body, Card, Splash, Footer, Menusection } from './components';
+import { Header, Body, Splash, Footer, Menusection } from './components';
 import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 
 
 function App() {
   const [alert, setAlert] = useState(true);
+
   return (
     <ThemeProvider theme={theme}>
-      <Splash name="doritos"/>
-      <Header name="365Dining" status="Open at 10:00 AM"/>
+      <Splash name="doritos" />
+      <Header name="365Dining" status="Opens at 10:00 AM" />
       <Body>
-        <Menusection name="Specials"/>
-        <Menusection name="Lunch"/>
-        <Menusection name="Drinks"/>
+        <Menusection name="Specials" />
+        <Menusection name="Lunch" />
+        <Menusection name="Drinks" />
       </Body>
       <Footer />
 
@@ -35,6 +36,9 @@ function App() {
 
     </ThemeProvider>
   );
+
+
+
 }
 
 export default App;

@@ -1,12 +1,12 @@
 // theme.js
 export default {
-  colors: {
-    dark: '#21212D',
-    light: '#EAEAE5',
-    white: '#FFFFFF',
-    primary: '#2555D9',
-  },
-  // layout
+    colors: {
+        dark: '#21212D',
+        light: '#EAEAE5',
+        white: '#FFFFFF',
+        primary: '#2555D9',
+    },
+    // layout
     sizes: {
         xs: '1rem', // 16px
         sm: '1.5rem', // 24px
@@ -26,6 +26,10 @@ export default {
         xl: '42px',
         xxl: '64px',
         xxxl: '96px'
+    },
+    fontWeights: {
+        light: '100',
+        heavy: '700'
     },
 
     // line heights

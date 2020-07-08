@@ -12,14 +12,16 @@ const StyledText = styled.p`
 
 function Text(props) {
   return (
-    <StyledText {...props}>
+    <StyledText color="dark" {...props}>
       {props.children}
+      {props.value}
     </StyledText>
   );
 }
 
 Text.propTypes = {
   fontSize: PropTypes.string,
+  value: PropTypes.string,
 }
 
 export default Text;

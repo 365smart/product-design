@@ -5,6 +5,13 @@ export default {
         light: '#EAEAE5',
         white: '#FFFFFF',
         primary: '#2555D9',
+        text: '#21212D',
+        secondaryText: '#727179',
+        lightText: '#FFFFFF',
+        border: '#C2C2C5',
+        danger: '#FF4C5B',
+        success: '#00BF6F',
+        warning: '#FFCC1E'
     },
     // layout
     sizes: {

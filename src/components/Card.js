@@ -14,10 +14,9 @@ const Container = styled(Div)`
 `;
 
 const Plate = styled(Div)`
-    background:#ffffff;
-    border-radius:16px;
+  
     overflow:hidden;
-    border:1px solid #C5C5C9;
+    border:1px solid ${props => props.theme.colors.border};
     //   @media only screen and (max-width: 768px) {
 //     background-color:red;
 //   }
@@ -39,7 +38,6 @@ left:0px;
 right:0px;
 display:flex;
 flex:1 1 auto;
-padding:8px;
 justify-content:flex-end;
 `;
 const Statrow = styled(Div)`
@@ -61,17 +59,17 @@ const Dietary = styled(Div)`
 function Card(props) {
     return (
         <Container {...props} p="xxs">
-            <Plate>
+            <Plate bg="white" borderRadius="lg">
                 <Splash>
-                    <Controls>
+                    <Controls p="xxs">
                         <Buttoncontrol />
                         <Buttoncontrol />
                     </Controls>
                     <Image src={require('../img/Products/' + props.name + '.jpg')} alt={props.name} />
                 </Splash>
                 <Statrow fontSize="sm" p="xs" >
-                    <Stat>{props.name}</Stat>
-                    <Stat>{props.price}</Stat>
+                    <Text>{props.name}</Text>
+                    <Text>{props.price}</Text>
                 </Statrow>
                 <Dietary></Dietary>
 

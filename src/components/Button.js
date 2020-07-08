@@ -32,4 +32,5 @@ Button.propTypes = {
   bgColor: PropTypes.string,
 }
 
+
 export default Button;

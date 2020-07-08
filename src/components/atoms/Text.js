@@ -8,18 +8,22 @@ const StyledText = styled.p`
   ${layout}
   ${space}
   ${typography}
+  margin:0px;
+  padding:0px;
 `;
 
 function Text(props) {
   return (
-    <StyledText {...props}>
+    <StyledText color="dark" {...props}>
       {props.children}
+      {props.value}
     </StyledText>
   );
 }
 
 Text.propTypes = {
   fontSize: PropTypes.string,
+  value: PropTypes.string,
 }
 
 export default Text;

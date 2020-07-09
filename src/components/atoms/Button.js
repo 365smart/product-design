@@ -11,31 +11,37 @@ import {
   typography
 } from 'styled-system';
 
-const StyledButton = styled.button`
-  ${color}
-  ${layout}
-  ${space}
-  ${flexbox}
-  ${border}
-  ${typography}
-  border: none;
-  outline: none;
-  &:active {
-    opacity: .85
+const StyledButton = styled('button')(
+  {
+    border: 'none',
+    outline: 'none',
+    '&:active': {
+      opacity: .75,
+    }
   },
+  color,
+  layout,
+  space,
+  flexbox,
+  border,
+  typography,
   variant({
     variants: {
       primary: {
-        color: 'pink',
-        bg: 'pink',
+        color: 'white',
+        bg: 'primary',
       },
       secondary: {
-        color: 'blue',
-        bg: 'blue',
+        color: 'white',
+        bg: 'secondary',
+      },
+      link: {
+        color: 'primary',
+        bg: 'white',
       },
     }
   })
-`;
+);
 
 function Button(props) {
   return (

@@ -22,3 +22,10 @@ export const sizes = () =>
     <Button fontSize="lg" label="Large"/>
     <Button fontSize="xl" label="X-Large"/>
   </div>;
+
+export const variants = () =>
+  <div>
+    <Button variant="primary" label="Primary"/>
+    <Button variant="secondary" label="Secondary"/>
+    <Button variant="link" label="Link"/>
+  </div>

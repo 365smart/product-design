@@ -5,6 +5,7 @@ export default {
         light: '#EAEAE5',
         white: '#FFFFFF',
         primary: '#2555D9',
+        secondary: '#727179',
         text: '#21212D',
         secondaryText: '#727179',
         lightText: '#FFFFFF',

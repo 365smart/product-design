@@ -13,19 +13,36 @@ export const colors = () =>
     <Button bg="success" label="Success"/>
     <Button bg="warning" color="text" label="Warning"/>
     <Button bg="light" color="text" label="Plain"/>
-  </div>;
-
-export const sizes = () =>
-  <div>
-    <Button fontSize="sm" label="Small"/>
-    <Button fontSize="md" label="Medium"/>
-    <Button fontSize="lg" label="Large"/>
-    <Button fontSize="xl" label="X-Large"/>
+    <Button bg="white" color="primary" fontWeight="400" label="Link"/>
   </div>;
 
 export const variants = () =>
   <div>
-    <Button variant="primary" label="Primary"/>
-    <Button variant="secondary" label="Secondary"/>
-    <Button variant="link" label="Link"/>
+    <Button variant="xs" label="X-Small"/>
+    <Button variant="sm" label="Small"/>
+    <Button variant="md" label="Medium"/>
+    <Button variant="lg" label="Large"/>
+    <Button variant="xl" label="X-Large"/>
+    <Button variant="xxl" label="XX-Large"/>
   </div>
+
+export const prepend = () =>
+  <Button
+    prepend={
+      <span
+        role="img"
+        aria-label="img"
+        style={{marginRight: 8}}>←</span>
+    }
+    label="Prepend"
+  />
+
+export const append = () =>
+  <Button
+    append={
+      <span
+        role="img"
+        aria-label="img"
+        style={{marginLeft: 8}}>→</span>
+    }
+    label="Append"/>

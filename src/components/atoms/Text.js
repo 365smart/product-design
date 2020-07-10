@@ -1,16 +1,50 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { color, layout, space, typography } from 'styled-system';
+import { variant } from 'styled-system';
 
-const StyledText = styled.p`
-  ${color}
-  ${layout}
-  ${space}
-  ${typography}
-  margin:0px;
-  padding:0px;
-`;
+import PropTypes from 'prop-types';
+import { color, layout, space, typography, border } from 'styled-system';
+
+const StyledText = styled('p')(
+  {
+    margin: 0,
+    padding: 0,
+    userSelect: 'none'
+  },
+  color,
+  layout,
+  space,
+  border,
+  typography,
+  variant({
+    variants: {
+      xs: {
+        fontSize: 'xs',
+        lineHeight: 'xs',
+      },
+      sm: {
+        fontSize: 'sm',
+        lineHeight: 'sm',
+      },
+      md: {
+        fontSize: 'md',
+        lineHeight: 'md',
+      },
+      lg: {
+        fontSize: 'lg',
+        lineHeight: 'lg',
+      },
+      xl: {
+        fontSize: 'xl',
+        lineHeight: 'xl',
+      },
+      xxl: {
+        fontSize: 'xxl',
+        lineHeight: 'xxl',
+      },
+    }
+  })
+);
 
 function Text(props) {
   return (

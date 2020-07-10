@@ -15,6 +15,7 @@ const StyledButton = styled('button')(
   {
     border: 'none',
     outline: 'none',
+    fontWeight: 'bold',
     '&:active': {
       opacity: .75,
     }
@@ -27,17 +28,47 @@ const StyledButton = styled('button')(
   typography,
   variant({
     variants: {
-      primary: {
-        color: 'white',
-        bg: 'primary',
+      xs: {
+        px: 'xs',
+        py: 'xxs',
+        fontSize: 'xs',
+        lineHeight: 'xs',
+        borderRadius: 'md',
       },
-      secondary: {
-        color: 'white',
-        bg: 'secondary',
+      sm: {
+        px: 'sm',
+        py: 'xxs',
+        fontSize: 'sm',
+        lineHeight: 'sm',
+        borderRadius: 'md',
       },
-      link: {
-        color: 'primary',
-        bg: 'white',
+      md: {
+        px: 'sm',
+        py: 'xxs',
+        fontSize: 'md',
+        lineHeight: 'md',
+        borderRadius: 'lg',
+      },
+      lg: {
+        px: 'md',
+        py: 'xxs',
+        fontSize: 'lg',
+        lineHeight: 'lg',
+        borderRadius: 'lg',
+      },
+      xl: {
+        px: 'md',
+        py: 'xs',
+        fontSize: 'xl',
+        lineHeight: 'xl',
+        borderRadius: 'lg',
+      },
+      xxl: {
+        px: 'xl',
+        py: 'sm',
+        fontSize: 'xxl',
+        lineHeight: 'xxl',
+        borderRadius: 'xl',
       },
     }
   })
@@ -54,8 +85,10 @@ function Button(props) {
       borderRadius="md"
       bg="primary"
       {...props}>
+      {props.prepend}
       {props.children}
       {props.label}
+      {props.append}
     </StyledButton>
   );
 }

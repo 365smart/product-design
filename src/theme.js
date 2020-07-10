@@ -16,6 +16,7 @@ export default {
     },
     // layout
     sizes: {
+        xxs: '.5rem', // 8px
         xs: '1rem', // 16px
         sm: '1.5rem', // 24px
         md: '2rem', // 32px
@@ -68,6 +69,7 @@ export default {
         md: '.5rem', // 8px
         lg: '1rem', // 16px
         xl: '2rem', // 32px
-        xxl: '4rem', // 64px
+        xxl: '3rem', // 48px
+        xxxl: '4rem', // 64px
     },
 }

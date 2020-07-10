@@ -3,4 +3,4 @@ import { Div } from '../';
 
 export default { title: 'atoms.Div' };
 
-export const withText = () => <Div>Hello</Div>;
+export const basic = () => <Div>Hello</Div>;

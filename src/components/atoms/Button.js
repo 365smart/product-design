@@ -7,7 +7,8 @@ import {
   space,
   flexbox,
   border,
-  typography
+  typography,
+  variant
 } from 'styled-system';
 
 const StyledButton = styled('button')(

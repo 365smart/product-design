@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Footernav from './Footernav';
-import Footermessage from './Footermessage';
+import Footermessage from './molecules/Footermessage';
 import Slider from './Slider';
 import { Div } from './atoms';
 

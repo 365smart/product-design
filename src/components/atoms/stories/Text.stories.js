@@ -5,16 +5,16 @@ export default { title: 'atoms.Text' };
 
 export const plain = () => <Text value="Press Me"/>;
 
-export const fontSizes = () =>
+export const variants = () =>
   <div>
-    <Text fontSize="xxs" value="12px (xxs)"/>
-    <Text fontSize="xs" value="14px (xs)"/>
-    <Text fontSize="sm" value="18px (sm)"/>
-    <Text fontSize="md" value="24px (md)"/>
-    <Text fontSize="lg" value="32px (lg)"/>
-    <Text fontSize="xl" value="42px (xl)"/>
-    <Text fontSize="xxl" value="64px (xxl)"/>
-    <Text fontSize="xxxl" value="96px (xxxl)"/>
+    <Text variant="xxs" value="12px (xxs)"/>
+    <Text variant="xs" value="14px (xs)"/>
+    <Text variant="sm" value="18px (sm)"/>
+    <Text variant="md" value="24px (md)"/>
+    <Text variant="lg" value="32px (lg)"/>
+    <Text variant="xl" value="42px (xl)"/>
+    <Text variant="xxl" value="64px (xxl)"/>
+    <Text variant="xxxl" value="96px (xxxl)"/>
   </div>;
 
 export const colors = () =>

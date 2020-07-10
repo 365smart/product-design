@@ -10,19 +10,68 @@ import {
   typography
 } from 'styled-system';
 
-const StyledButton = styled.button`
-  ${color}
-  ${layout}
-  ${space}
-  ${flexbox}
-  ${border}
-  ${typography}
-  border: none;
-  outline: none;
-  &:active {
-    opacity: .85
-  }
-`;
+const StyledButton = styled('button')(
+  {
+    border: 'none',
+    outline: 'none',
+    fontWeight: 'bold',
+    '&:active': {
+      opacity: .75,
+    }
+  },
+  color,
+  layout,
+  space,
+  flexbox,
+  border,
+  typography,
+  variant({
+    variants: {
+      xs: {
+        px: 'xs',
+        py: 'xxs',
+        fontSize: 'xs',
+        lineHeight: 'xs',
+        borderRadius: 'md',
+      },
+      sm: {
+        px: 'sm',
+        py: 'xxs',
+        fontSize: 'sm',
+        lineHeight: 'sm',
+        borderRadius: 'md',
+      },
+      md: {
+        px: 'sm',
+        py: 'xxs',
+        fontSize: 'md',
+        lineHeight: 'md',
+        borderRadius: 'lg',
+      },
+      lg: {
+        px: 'md',
+        py: 'xxs',
+        fontSize: 'lg',
+        lineHeight: 'lg',
+        borderRadius: 'lg',
+      },
+      xl: {
+        px: 'md',
+        py: 'xs',
+        fontSize: 'xl',
+        lineHeight: 'xl',
+        borderRadius: 'lg',
+      },
+      xxl: {
+        px: 'xl',
+        py: 'sm',
+        fontSize: 'xxl',
+        lineHeight: 'xxl',
+        borderRadius: 'xl',
+      },
+    }
+  })
+);
 
 function Button(props) {
   return (
@@ -35,8 +84,10 @@ function Button(props) {
       borderRadius="md"
       bg="primary"
       {...props}>
+      {props.prepend}
       {props.children}
       {props.label}
+      {props.append}
     </StyledButton>
   );
 }

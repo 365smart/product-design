@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  padding: 8px 16px;
-  color: white;
-  font-size: 14px;
+  padding: ${props => props.theme.space.xxs} ${props => props.theme.space.xs};
+  color: ${props => props.theme.colors.white};
+  font-size: ${props => props.theme.fontSizes.xs};
   border: none;
   outline: none;
-  border-radius: 8px;
-  margin: 16px;
+  border-radius: ${props => props.theme.radii.md};
+  margin: ${props => props.theme.space.xs};
   background: ${props => props.bgColor ? props.bgColor : '#2555D9'};
   &:active {
     opacity: .85

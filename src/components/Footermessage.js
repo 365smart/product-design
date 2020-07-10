@@ -6,7 +6,7 @@ import barcode from '../img/Icons/barcode.png';
 
 
 const Container = styled(Div)`
-background: ${props => props.bgColor ? props.bgColor : '#2555D9'};
+background-color: ${props => props.bgColor ? props.bgColor : props.theme.colors.primary};
 display:flex;
 height:120px;
 justify-content:flex-start;
@@ -14,26 +14,29 @@ align-items: center;
 width:100%;
 `;
 
-const Icon = styled(Div)`
-img{
+const Icon = styled.img`
   object-fit: contain;
   height: 80px;
   width:80px;
-}
+  margin: ${props => props.theme.space.xs};
+`;
+
+const Message = styled(Text)`
+  color: ${props => props.theme.colors.white};
+  font-weight: ${props => props.theme.fontWeights.heavy};
+  margin: ${props => props.theme.space.xs};
+  font-size: ${props => props.theme.fontSizes.xl};
+
 `;
 
 
-
-
-function Footernav(props) {
+function Footermessage(props) {
   return (
     <Container {...props}>
-      <Icon m="xs">
-        <img src={barcode} alt="barcode" />
-      </Icon>
-      <Text color="white" fontWeight="heavy" m="xs" fontSize="xl">{props.message}</Text>
+      <Icon src={barcode} alt="barcode" />
+      <Message>{props.message}</Message>
     </Container>
   );
 }
 
-export default Footernav;
+export default Footermessage;

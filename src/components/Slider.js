@@ -14,7 +14,7 @@ import Worldwalkcafe from '../img/Diners/Logos/Worldwalkcafe.png';
 import Angledown from '../img/Icons/angle-down-white.png';
 
 const Container = styled(Div)`
-background-color:#ffffff;
+background-color:${props => props.theme.colors.white};
 display:flex;
 width:100vw;
 overflow:hidden;
@@ -34,6 +34,9 @@ width:100vw;
 width:100%;
 overflow:scroll;
 position:relative;
+padding:${props => props.theme.space.xxs};
+padding-left:${props => props.theme.space.sm};
+padding-right:${props => props.theme.space.sm};
 `;
 
 const IndicatorLeft = styled(Div)`
@@ -80,32 +83,39 @@ background-color:#ffffff;
 justify-content:center;
 align-items:center;
 border:1px solid rgba(128,128,128,.5);
-border-radius:16px;
+margin:${props => props.theme.space.xxs};
+border-radius:${props => props.theme.radii.lg};
 img{
   height:100%;
   width:100%;
   object-fit: contain;
 }
 `;
+const Slidetitle = styled(Text)`
+font-size:${props => props.theme.fontSizes.md};
+font-weight:${props => props.theme.fontWeights.heavy};
+color:${props => props.theme.colors.black};
+padding:${props => props.theme.space.xs};
+`;
 
 
 
 function Slider(props) {
   return (
-    <Container {...props} color="white" >
-      <Text fontSize="md" fontWeight="heavy" color="black">{props.message}</Text>
-      <Slidezone p="xxs" pl="sm" pr="sm">
+    <Container {...props}>
+      <Slidetitle>{props.message}</Slidetitle>
+      <Slidezone>
         <IndicatorLeft />
-        <Slide m="xxs"><img src={Threesixfivedining} alt="Threesixfivedining" /></Slide>
-        <Slide m="xxs"><img src={Angelos} alt="Angelos" /></Slide>
-        <Slide m="xxs"><img src={Bellas} alt="Bellas" /></Slide>
-        <Slide m="xxs"><img src={Drinks} alt="Drinks" /></Slide>
-        <Slide m="xxs"><img src={Frutandvegi} alt="Frutandvegi" /></Slide>
-        <Slide m="xxs"><img src={Grillvalley} alt="Grillvalley" /></Slide>
-        <Slide m="xxs"><img src={Saffronbloom} alt="Saffronbloom" /></Slide>
-        <Slide m="xxs"><img src={Speckledplate} alt="Speckledplate" /></Slide>
-        <Slide m="xxs"><img src={Streetsiders} alt="Streetsiders" /></Slide>
-        <Slide m="xxs"><img src={Worldwalkcafe} alt="Worldwalkcafe" /></Slide>
+        <Slide><img src={Threesixfivedining} alt="Threesixfivedining" /></Slide>
+        <Slide><img src={Angelos} alt="Angelos" /></Slide>
+        <Slide ><img src={Bellas} alt="Bellas" /></Slide>
+        <Slide ><img src={Drinks} alt="Drinks" /></Slide>
+        <Slide ><img src={Frutandvegi} alt="Frutandvegi" /></Slide>
+        <Slide ><img src={Grillvalley} alt="Grillvalley" /></Slide>
+        <Slide ><img src={Saffronbloom} alt="Saffronbloom" /></Slide>
+        <Slide ><img src={Speckledplate} alt="Speckledplate" /></Slide>
+        <Slide ><img src={Streetsiders} alt="Streetsiders" /></Slide>
+        <Slide ><img src={Worldwalkcafe} alt="Worldwalkcafe" /></Slide>
         <IndicatorRight />
 
       </Slidezone>

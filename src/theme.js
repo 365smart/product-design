@@ -3,6 +3,7 @@ export default {
     colors: {
         dark: '#21212D',
         light: '#EAEAE5',
+        black: '#000000',
         white: '#FFFFFF',
         primary: '#2555D9',
         text: '#21212D',
@@ -51,6 +52,7 @@ export default {
 
     // space (margins/paddings)
     space: {
+        xxxxs: '0.125rem', // 2px
         xxxs: '0.25rem', // 4px
         xxs: '0.5rem', // 8px
         xs: '1rem', // 16px
@@ -65,6 +67,7 @@ export default {
     radii: {
         sm: '.25rem', //4px
         md: '.5rem', // 8px
+        mdlg: '.75rem', // 8px
         lg: '1rem', // 16px
         xl: '2rem', // 32px
         xxl: '4rem', // 64px

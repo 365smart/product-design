@@ -21,7 +21,7 @@ function Footer(props) {
     <Container {...props}>
       <Slider message="Tap for more choices" />
       <Footermessage message="Scan an item at any time" />
-      <Footernav />
+      <Footernav total={props.total} message={props.message} />
     </Container>
   );
 }

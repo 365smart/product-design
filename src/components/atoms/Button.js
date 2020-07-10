@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
 import {
   color,
   layout,
@@ -22,19 +21,7 @@ const StyledButton = styled.button`
   outline: none;
   &:active {
     opacity: .85
-  },
-  variant({
-    variants: {
-      primary: {
-        color: 'pink',
-        bg: 'pink',
-      },
-      secondary: {
-        color: 'blue',
-        bg: 'blue',
-      },
-    }
-  })
+  }
 `;
 
 function Button(props) {

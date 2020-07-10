@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Header, Body, Splash, Footer, Menusection } from './components';
-import { ThemeProvider } from 'styled-components'
-import theme from './theme'
-
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
 
 function App() {
   const [alert, setAlert] = useState(true);
@@ -16,7 +15,7 @@ function App() {
         <Menusection name="Lunch" />
         <Menusection name="Drinks" />
       </Body>
-      <Footer />
+      <Footer total="$14.50" message="View Order" />
 
       {/* {alert === true ?
         (

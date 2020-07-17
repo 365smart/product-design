@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Footernav from './Footernav';
-import Footermessage from './molecules/Footermessage';
-import Slider from './Slider';
-import { Div } from './atoms';
+import { Footernav, Footermessage, Slider } from '.';
+import { Div, Icon } from '../atoms';
 
 const Container = styled(Div)`
   display: flex;
@@ -19,11 +17,10 @@ const Container = styled(Div)`
 function Footer(props) {
   return (
     <Container {...props}>
-      <Slider message="Tap for more choices" />
-      <Footermessage message="Scan an item at any time" />
-      <Footernav total={props.total} message={props.message} />
+      <Slider sliderMessage="Tap for more choices" />
+      <Footermessage icons={<Icon name="barcode" />} footerMessage="Scan an item at any time" />
+      <Footernav />
     </Container>
   );
 }
-
 export default Footer;

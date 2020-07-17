@@ -42,6 +42,31 @@ const StyledText = styled('p')(
         fontSize: 'xxl',
         lineHeight: 'xxl',
       },
+      xxxl: {
+        fontSize: 'xxxl',
+        lineHeight: 'xxxl',
+      },
+      mdHead: {
+        display: 'flex',
+        flex: '1 1 auto',
+
+        justifyContent: 'center',
+        margin: '0px',
+        fontSize: 'md',
+        fontWeight: 'heavy',
+        padding: 'xs',
+        lineHeight: 'normal',
+        width: '100%',
+      },
+      xxlHead: {
+        width: '100%',
+        padding: 'md',
+        fontSize: 'xxl',
+        fontWeight: 'heavy',
+        margin: '0px',
+        alignItems: 'flex-end',
+        lineHeight: 'normal',
+      }
     }
   })
 );

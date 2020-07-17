@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from '../';
+import { Button, Text } from '../';
+import { Icon } from '../';
 
 export default { title: 'atoms.Button' };
 
@@ -7,23 +8,29 @@ export const plain = () => <Button>Hello</Button>;
 
 export const colors = () =>
   <div>
-    <Button bg="primary" label="Primary"/>
-    <Button bg="dark" label="Dark"/>
-    <Button bg="danger" label="Danger"/>
-    <Button bg="success" label="Success"/>
-    <Button bg="warning" color="text" label="Warning"/>
-    <Button bg="light" color="text" label="Plain"/>
-    <Button bg="white" color="primary" fontWeight="400" label="Link"/>
+    <Button bg="primary" label="Primary" />
+    <Button bg="dark" label="Dark" />
+    <Button bg="danger" label="Danger" />
+    <Button bg="success" label="Success" />
+    <Button bg="warning" color="text" label="Warning" />
+    <Button bg="light" color="text" label="Plain" />
+    <Button bg="white" color="primary" fontWeight="400" label="Link" />
   </div>;
 
 export const variants = () =>
   <div>
-    <Button variant="xs" label="X-Small"/>
-    <Button variant="sm" label="Small"/>
-    <Button variant="md" label="Medium"/>
-    <Button variant="lg" label="Large"/>
-    <Button variant="xl" label="X-Large"/>
-    <Button variant="xxl" label="XX-Large"/>
+    <Button variant="xs" label="X-Small" />
+    <Button variant="sm" label="Small" />
+    <Button variant="md" label="Medium" />
+    <Button variant="lg" label="Large" />
+    <Button variant="xl" label="X-Large" />
+    <Button variant="xxl" label="XX-Large" />
+    <div style={{ backgroundColor: 'black', display: 'flex' }}>
+      <Button variant="footernav" icons={<Icon name="barcode" />} label="Footer Nav" />
+    </div>
+    <div style={{ backgroundColor: 'black', display: 'flex' }}>
+      <Button variant="footeraction" label="Footer Action" subMessage={<Text variant="md" color="white">Sub Message</Text>} />
+    </div>
   </div>
 
 export const prepend = () =>
@@ -32,7 +39,7 @@ export const prepend = () =>
       <span
         role="img"
         aria-label="img"
-        style={{marginRight: 8}}>←</span>
+        style={{ marginRight: 8 }}>←</span>
     }
     label="Prepend"
   />
@@ -43,6 +50,6 @@ export const append = () =>
       <span
         role="img"
         aria-label="img"
-        style={{marginLeft: 8}}>→</span>
+        style={{ marginLeft: 8 }}>→</span>
     }
-    label="Append"/>
+    label="Append" />

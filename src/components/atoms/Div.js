@@ -11,21 +11,87 @@ import {
   flexbox,
   grid,
   position,
-  background
+  background,
+  variant
 } from 'styled-system';
 
-const StyledDiv = styled.div`
-  ${color}
-  ${space}
-  ${border}
-  ${typography}
-  ${layout}
-  ${shadow}
-  ${flexbox}
-  ${grid}
-  ${position}
-  ${background}
-`;
+// const StyledDiv = styled.div`
+//   ${color}
+//   ${space}
+//   ${border}
+//   ${typography}
+//   ${layout}
+//   ${shadow}
+//   ${flexbox}
+//   ${grid}
+//   ${position}
+//   ${background}
+// `;
+
+
+const StyledDiv = styled('div')(
+  {
+    // ${color}
+    // ${space}
+    // ${border}
+    // ${typography}
+    // ${layout}
+    // ${shadow}
+    // ${flexbox}
+    // ${grid}
+    // ${position}
+    // ${background}
+  },
+  color,
+  space,
+  border,
+  typography,
+  layout,
+  shadow,
+  flexbox,
+  grid,
+  position,
+  background,
+  variant({
+    variants: {
+      smDietary: {
+        display: 'flex',
+        height: 'sm',
+        borderRadius: 'mdlg',
+        alignItems: 'center',
+        backgroundColor: 'black',
+        color: 'white',
+        margin: 'xxxxs',
+        fontSize: 'xxs',
+        padding: 'xxs',
+        fontWeight: 'heavy',
+      },
+      controlsTR: {
+        position: 'absolute',
+        top: '0px',
+        left: '0px',
+        right: '0px',
+        display: 'flex',
+        flex: '1 1 auto',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-end',
+        padding: 'xxs'
+      },
+      slideZone: {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        maxWidth: '100%',
+        overflow: 'scroll',
+        position: 'relative',
+        padding: 'xxs',
+        paddingLeft: 'sm',
+        paddingRight: 'sm',
+      }
+    }
+  })
+);
+
 
 function Div(props) {
   return (
@@ -36,7 +102,7 @@ function Div(props) {
 }
 
 Div.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.any,
   margin: PropTypes.string,
   /** margin */
   m: PropTypes.string,

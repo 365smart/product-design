@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
-import { Header, Body, Splash, Footer, Menusection } from './components';
+import { Menusection } from './components';
+import { Body, Img, Div, Icon, Button } from './components/atoms';
+import { Splash, Footer, Header } from './components/molecules';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 
 function App() {
-  const [alert, setAlert] = useState(true);
+  // const [alert, setAlert] = useState(true);
 
   return (
     <ThemeProvider theme={theme}>
-      <Splash name="doritos" />
-      <Header name="365Dining" status="Opens at 10:00 AM" />
+      <Splash images={<Img variant="cover" name="doritos" location="Products/Upsales" fileType="jpg" />}>
+        <Div variant="controlsTR">
+          <Button variant="controlGhostDark"><Icon variant="forControls" name="info" /></Button>
+          <Button variant="control" ><Icon variant="forControls" name="add" /></Button>
+        </Div>
+      </Splash>
+      <Header logoName="365Dining" logoLocation="Diners/Logos" logoFileType="png" bgName="365Dining" bgLocation="Diners/BG" status="Opens at 10:00 AM" bgFileType="jpg" />
       <Body>
         <Menusection name="Specials" />
         <Menusection name="Lunch" />
         <Menusection name="Drinks" />
       </Body>
-      <Footer total="$14.50" message="View Order" />
+      <Footer />
 
       {/* {alert === true ?
         (

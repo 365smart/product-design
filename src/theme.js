@@ -13,7 +13,8 @@ export default {
         border: '#C2C2C5',
         danger: '#FF4C5B',
         success: '#00BF6F',
-        warning: '#FFCC1E'
+        warning: '#FFCC1E',
+        ghostdark: 'rgba(33,33,45,.5)'
     },
     // layout
     sizes: {
@@ -69,7 +70,7 @@ export default {
     radii: {
         sm: '.25rem', //4px
         md: '.5rem', // 8px
-        mdlg: '.75rem', // 8px
+        mdlg: '.75rem', // 12px
         lg: '1rem', // 16px
         xl: '2rem', // 32px
         xxl: '3rem', // 48px

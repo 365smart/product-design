@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Div, Text } from '../atoms';
-import barcode from '../../img/Icons/barcode.png';
+import PropTypes from 'prop-types';
 
 
 
@@ -14,11 +14,8 @@ align-items: center;
 width:100%;
 `;
 
-const Icon = styled.img`
-  object-fit: contain;
-  height: 80px;
-  width:80px;
-  margin: ${props => props.theme.space.xs};
+const Icons = styled(Div)`
+
 `;
 
 const Message = styled(Text)`
@@ -33,10 +30,19 @@ const Message = styled(Text)`
 function Footermessage(props) {
   return (
     <Container {...props}>
-      <Icon src={barcode} alt="barcode" />
-      <Message>{props.message}</Message>
+      <Icons>
+        {props.icons}
+      </Icons>
+      <Message>{props.footerMessage}</Message>
     </Container>
   );
+}
+
+Footermessage.propTypes = {
+  /** Icons */
+  icons: PropTypes.object,
+  /** Text message */
+  footerMessage: PropTypes.string,
 }
 
 export default Footermessage;

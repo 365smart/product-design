@@ -1,9 +1,16 @@
-import Div from './Div';
-import Text from './Text';
+
+import Body from './Body';
 import Button from './Button';
+import Div from './Div';
+import Icon from './Icon';
+import Img from './Img';
+import Text from './Text';
 
 export {
+    Body,
+    Button,
     Div,
-    Text,
-    Button
+    Icon,
+    Img,
+    Text
 }

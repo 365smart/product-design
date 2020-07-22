@@ -19,7 +19,7 @@ const Container = styled(Div)`
 
 function Footer(props) {
   return (
-    <Container {...props}>
+    <Container {...props} onClick={props.onClick}>
       <Slider sliderMessage="Tap for more choices" />
       <Footermessage icons={<Icon name="barcode" />} footerMessage="Scan an item at any time" />
       <Footernav />

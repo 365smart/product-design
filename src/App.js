@@ -20,12 +20,12 @@ function App() {
         <Menusection name="Lunch" />
         <Menusection name="Drinks" />
       </Body>
-      <Footer />
+      <Footer onClick={() => setModal(true)}/>
 
 
       {modal === true ?
         (
-          <Modal >
+          <Modal onClose={() => setModal(false)}>
             <Productdetail />
           </Modal>
         )

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Div, Text, Button, Icon, Img } from '../atoms';
 import { Dietary, Splash } from '.';
+import Itemaddremove from './Itemaddremove';
+
 
 const Container = styled(Div)`
   display: flex;
@@ -40,19 +42,14 @@ padding: ${props => props.theme.space.xs};
 `;
 
 
-
-
-
-
 function Card(props) {
+
+
     return (
         <Container {...props}>
             <Plate>
                 <Splash variant={props.splashVariant} images={<Img variant={props.imageVariant} name={props.name} location={props.location} fileType={props.fileType} />} >
-                    <Div variant="controlsTR">
-                        <Button variant="controlGhostDark"><Icon variant="forControls" name="info" /></Button>
-                        <Button variant="control" ><Icon variant="forControls" name="add" /></Button>
-                    </Div>
+                    <Itemaddremove />
                 </Splash>
                 <Statrow>
                     <Text>{props.name}</Text>

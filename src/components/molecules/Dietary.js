@@ -13,12 +13,25 @@ padding: ${props => props.theme.space.xs};
 padding-top:0px;
 `;
 
+const Calories = styled(Div)`
+display: flex;
+height: ${props => props.theme.space.sm};
+border-radius: ${props => props.theme.space.xs};
+align-items: center;
+background-color: ${props => props.theme.colors.black};
+color: ${props => props.theme.colors.white};
+margin: ${props => props.theme.space.xxxxs};
+font-size: ${props => props.theme.fontSizes.xxs};
+padding: ${props => props.theme.space.xxs};
+font-weight: ${props => props.theme.fontWeights.heavy};
+`;
+
 
 
 function Dietary(props) {
   return (
     <Container {...props}>
-      <Div variant="smDietary">{props.cal} CAL</Div>
+      <Calories>{props.cal} CAL</Calories>
       <Icon variant="sm" name="golite" />
       <Icon variant="sm" name="nodairy" />
       <Icon variant="sm" name="nogluten" />

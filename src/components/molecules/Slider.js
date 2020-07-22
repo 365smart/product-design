@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Div, Text, Icon } from '../atoms';
+import { Div, Icon, Title } from '../atoms';
 import { Slide } from '../molecules';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,6 @@ import {
   flexbox,
   border,
   typography,
-  variant
 } from 'styled-system';
 const Container = styled(Div)(
   {
@@ -32,18 +31,7 @@ const Container = styled(Div)(
   space,
   flexbox,
   border,
-  typography,
-  variant({
-    variants: {
-      // xs: {
-      //   px: 'xs',
-      //   py: 'xxs',
-      //   fontSize: 'xs',
-      //   lineHeight: 'xs',
-      //   borderRadius: 'md',
-      // },
-    }
-  })
+  typography
 );
 const IndicatorLeft = styled(Div)`
 display:flex;
@@ -71,15 +59,26 @@ right:-40px;
 justify-content:center;
 align-items:center;
 transform: rotate(-90deg);
-padding-bottom:16px;
+padding-bottom:${props => props.theme.space.xs};
+`;
+const SlideZone = styled(Div)`
+display: flex;
+justifyC-content: flex-start;
+align-items: center;
+max-width: 100%;
+overflow: scroll;
+position: relative;
+padding: ${props => props.theme.space.xxs};
+padding-left: ${props => props.theme.space.sm};
+padding-right: ${props => props.theme.space.sm};
 `;
 
 
 function Splash(props) {
   return (
     <Container {...props}>
-      <Text variant="mdHead" value={props.sliderMessage} />
-      <Div variant="slideZone">
+      <Title variant="mdHead" value={props.sliderMessage} />
+      <SlideZone>
         <IndicatorLeft><Icon name="angle-down-white" variant="forControls" /></IndicatorLeft>
         <Slide variant="contain" name="Bellas" location="Diners/Logos" fileType="png" />
         <Slide variant="contain" name="365Dining-black" location="Diners/Logos" fileType="png" />
@@ -92,7 +91,7 @@ function Splash(props) {
         <Slide variant="contain" name="Streetsiders" location="Diners/Logos" fileType="png" />
         <Slide variant="contain" name="Worldwalkcafe" location="Diners/Logos" fileType="png" />';
         <IndicatorRight><Icon name="angle-down-white" variant="forControls" /></IndicatorRight>
-      </Div>
+      </SlideZone>
     </Container>
   );
 }

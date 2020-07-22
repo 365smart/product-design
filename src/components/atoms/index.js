@@ -4,7 +4,9 @@ import Button from './Button';
 import Div from './Div';
 import Icon from './Icon';
 import Img from './Img';
+import Modal from './Modal';
 import Text from './Text';
+import Title from './Title';
 
 export {
     Body,
@@ -12,5 +14,7 @@ export {
     Div,
     Icon,
     Img,
-    Text
+    Modal,
+    Text,
+    Title
 }

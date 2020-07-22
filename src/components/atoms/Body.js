@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { color, layout, space, typography, border, variant } from 'styled-system';
 
@@ -10,8 +11,7 @@ const StyledDiv = styled('div')(
     alignItems: 'flex-start',
     justifyContent: 'center',
     fontSize: 'sm',
-    lineHeight: 'sm',
-    paddingBottom: '50vh',
+    lineHeight: 'sm'
   },
   color,
   layout,
@@ -20,7 +20,9 @@ const StyledDiv = styled('div')(
   typography,
   variant({
     variants: {
-
+      PBStandard: {
+        paddingBottom: '50vh',
+      },
     }
   })
 );
@@ -38,8 +40,8 @@ function Body(props) {
 }
 
 Body.propTypes = {
-  /** Name of icon file */
-  // name: PropTypes.string
+  /** Variant creates body with enough padding at bottom to clear the fixed footer elements */
+  variant: PropTypes.string
 }
 
 export default Body;

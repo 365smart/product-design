@@ -15,9 +15,6 @@ export const variants = () =>
     <Text variant="xl" value="42px (xl)" />
     <Text variant="xxl" value="64px (xxl)" />
     <Text variant="xxxl" value="96px (xxxl)" />
-    <hr></hr>
-    <Text variant="mdHead" value="24px Head (md)" />
-    <Text variant="xxlHead" value="64px Head (xxl)" />
   </div>;
 
 export const colors = () =>

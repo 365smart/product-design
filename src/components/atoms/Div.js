@@ -54,39 +54,15 @@ const StyledDiv = styled('div')(
   background,
   variant({
     variants: {
-      smDietary: {
-        display: 'flex',
-        height: 'sm',
-        borderRadius: 'mdlg',
-        alignItems: 'center',
-        backgroundColor: 'black',
-        color: 'white',
-        margin: 'xxxxs',
-        fontSize: 'xxs',
-        padding: 'xxs',
-        fontWeight: 'heavy',
-      },
       controlsTR: {
         position: 'absolute',
         top: '0px',
-        left: '0px',
         right: '0px',
         display: 'flex',
-        flex: '1 1 auto',
+        flex: '0 1 auto',
         alignItems: 'flex-start',
         justifyContent: 'flex-end',
         padding: 'xxs'
-      },
-      slideZone: {
-        display: 'flex',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        maxWidth: '100%',
-        overflow: 'scroll',
-        position: 'relative',
-        padding: 'xxs',
-        paddingLeft: 'sm',
-        paddingRight: 'sm',
       }
     }
   })

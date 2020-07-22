@@ -1,6 +1,5 @@
 import React from 'react';
 import { Icon, Button } from '..';
-
 export default { title: 'atoms.Icon' };
 
 export const plain = () => <Icon name="barcode" />;

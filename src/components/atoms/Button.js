@@ -71,55 +71,28 @@ const StyledButton = styled('button')(
         lineHeight: 'xxl',
         borderRadius: 'xl',
       },
-      footernav: {
-        flex: '1 1 auto',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        height: '224px',
-        borderRight: '2px solid #ffffff',
-        boxSizing: 'border-box',
-        backgroundColor: 'transparent',
-        margin: '0px',
-        borderRadius: '0px',
-        color: 'white',
-        padding: 'md',
-        fontSize: 'md',
-        fontWeight: 'heavy'
-      },
-      footeraction: {
-        flexDirection: 'column',
-        borderRadius: 'lg',
-        backgroundColor: 'primary',
-        height: 'auto',
-        minHeight: '160px',
-        fontWeight: 'heavy',
-        color: 'white',
-        p: 'md',
-        pb: '0',
-        pt: '0',
-        margin: 'md',
-        border: 'none',
-        alignItems: 'center',
-        fontSize: 'xxl',
-        justifyContent: 'center'
-      },
-      control: {
+      xlCircle: {
         height: 'xl',
-        width: 'xl',
+        width: 'auto',
+        // width: 'xl',
+        minWidth: 'xl',
         margin: 'xxs',
         borderRadius: 'xl',
         backgroundColor: 'primary',
-        padding: '.75rem'
+        padding: '.75rem',
+        flex: '0 1 0'
       },
-      controlGhostDark: {
-        height: '64px',
-        width: '64px',
+      xlCircleGhostDark: {
+        height: 'xl',
+        // width: 'xl',
+        minWidth: 'xl',
+        width: 'auto',
         margin: 'xxs',
         borderRadius: 'xl',
         backgroundColor: 'ghostdark',
         color: 'white',
-        padding: '.75rem'
+        padding: '.75rem',
+        flex: '0 1 0'
       }
 
     }
@@ -149,7 +122,7 @@ function Button(props) {
 
 Button.propTypes = {
   /** Text content */
-  label: PropTypes.string,
+  label: PropTypes.any,
   /** Text content */
   name: PropTypes.string,
   /** Text content */

@@ -25,12 +25,6 @@ export const variants = () =>
     <Button variant="lg" label="Large" />
     <Button variant="xl" label="X-Large" />
     <Button variant="xxl" label="XX-Large" />
-    <div style={{ backgroundColor: 'black', display: 'flex' }}>
-      <Button variant="footernav" icons={<Icon name="barcode" />} label="Footer Nav" />
-    </div>
-    <div style={{ backgroundColor: 'black', display: 'flex' }}>
-      <Button variant="footeraction" label="Footer Action" subMessage={<Text variant="md" color="white">Sub Message</Text>} />
-    </div>
   </div>
 
 export const prepend = () =>

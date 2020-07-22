@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Div, Img, Button, Icon } from '../atoms';
+import { Div, Img, Button, Icon } from '.';
 import PropTypes from 'prop-types';
 import {
   color,
@@ -12,21 +12,19 @@ import {
   typography,
   variant
 } from 'styled-system';
+import Productdetail from '../organisms/Productdetail';
 
 const StyledDiv = styled('div')(
   {
+    position: 'fixed',
+    top: '0px',
+    right: '0px',
+    bottom: '0px',
+    left: '0px',
     display: 'flex',
-    flex: 'none',
-    width: '328px',
-    height: '160px',
+    zIndex: '1',
     backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
-    border: '1px solid',
-    borderColor: '#C2C2C5',
-    margin: '0.5rem',
-    borderRadius: '1rem',
-    position: 'relative'
+    overflow: 'auto'
   },
   color,
   layout,
@@ -48,18 +46,15 @@ const StyledDiv = styled('div')(
 );
 
 
-function Slide(props) {
+function Modal(props) {
   return (
     <StyledDiv {...props}>
-      <Div variant="controlsTR">
-        <Button variant="xlCircleGhostDark"><Icon name="info" variant="forControls" /></Button>
-      </Div>
-      <Img variant={props.variant} name={props.name} location={props.location} fileType={props.fileType} />
+      {props.children}
     </StyledDiv>
   );
 }
 
-Slide.propTypes = {
+Modal.propTypes = {
   /** Image type */
   variant: PropTypes.string,
   /** File location of the image starting within the img folder */
@@ -71,4 +66,4 @@ Slide.propTypes = {
 
 }
 
-export default Slide;
+export default Modal;

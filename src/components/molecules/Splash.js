@@ -46,6 +46,7 @@ function Splash(props) {
       {props.images}
       {props.children}
 
+
     </StyledDiv>
   );
 }

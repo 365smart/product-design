@@ -1,12 +1,18 @@
-import Div from './Div';
-import Img from './Img';
-import Text from './Text';
+import Body from './Body';
 import Button from './Button';
-import Icon from './Icon.stories';
+import Div from './Div';
+import Icon from './Icon';
+import Img from './Img';
+import Modal from './Modal';
+import Text from './Text';
+import Title from './Title';
 export {
-    Div,
-    Img,
-    Text,
+    Body,
     Button,
-    Icon
+    Div,
+    Icon,
+    Img,
+    Modal,
+    Text,
+    Title
 }

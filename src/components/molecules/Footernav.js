@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const Container = styled(Div)`
 background-color:#22212D;
 display:flex;
+justify-content: space-between;
 flex-wrap:wrap;
 width:100%;
 color:${props => props.theme.colors.white};
@@ -26,6 +27,23 @@ padding: ${props => props.theme.space.md};
 font-size: ${props => props.theme.space.md};
 font-weight: ${props => props.theme.fontWeights.heavy};
 `;
+const FooterNavMin = styled(Button)`
+flex: 0 1 auto;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+height: 224px;
+border-right: 2px solid #ffffff;
+box-sizing: border-box;
+background-color: transparent;
+margin: 0px;
+border-radius: 0px;
+color: white;
+padding: ${props => props.theme.space.md};
+font-size: ${props => props.theme.space.md};
+font-weight: ${props => props.theme.fontWeights.heavy};
+`;
+
 
 const FooterAction = styled(Button)`
 flex-direction: column;
@@ -49,14 +67,28 @@ justify-content: center;
 
 
 function Footernav(props) {
-  return (
-    <Container {...props} >
-      <FooterNav icons={<Icon name="help" />} label="Help" />
-      <FooterNav icons={<Icon name="myaccount" />} label="My Account" />
-      <FooterNav icons={<Icon name="search" />} label="Search" />
-      <FooterAction label="$14.50" subMessage={<Text variant="md" color="white">View Order</Text>} />
-    </Container>
-  );
+  const navSet = props.navSet;
+  if (navSet === 'main') {
+    return (
+      <Container {...props} >
+        <FooterNav icons={<Icon name="help" />} label="Help" onClick={props.onHelp} />
+        <FooterNav icons={<Icon name="myaccount" />} label="My Account" onClick={props.onMyAccount} />
+        <FooterNav icons={<Icon name="search" />} label="Search" onClick={props.onSearch} />
+        <FooterAction label="$14.50" subMessage={<Text variant="md" color="white">View Order</Text>} />
+      </Container>
+    );
+  }
+  if (navSet === 'product') {
+    return (
+      <Container {...props} >
+        <FooterNavMin icons={<Icon name="close" />} label="Close" onClick={props.onClose} />
+        <FooterAction label="$14.50" subMessage={<Text variant="md" color="white">View Order</Text>} />
+      </Container>
+    );
+  }
+
+
+
 }
 
 Footernav.propTypes = {

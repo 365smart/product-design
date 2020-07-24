@@ -5,8 +5,9 @@ import Footermessage from './Footermessage';
 import Footernav from './Footernav';
 import Itemitemremove from './Itemitemremove';
 import Menusection from './Menusection';
-import Slide from './c';
+import Slide from './Slide';
 import Slider from './Slider';
+import Slideset from './Slideset';
 import Splash from './Splash';
 
 export {
@@ -19,5 +20,6 @@ export {
     Menusection,
     Slide,
     Slider,
+    Slideset,
     Splash
 }

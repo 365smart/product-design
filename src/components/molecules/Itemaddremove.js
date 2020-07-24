@@ -36,7 +36,7 @@ function Itemaddremove(props) {
       {count === 0 ?
         (
           <Div variant="controlsTR">
-            <Button variant="xlCircleGhostDark"><Icon variant="forControls" name="info" /></Button>
+            <Button variant="xlCircleGhostDark"><Icon variant="forControls" name="info" onClick={props.onProductDetail} /></Button>
             <Button variant="xlCircle" onClick={() => addItem()} ><Icon variant="forControls" name="add" /></Button></Div>
         )
         :

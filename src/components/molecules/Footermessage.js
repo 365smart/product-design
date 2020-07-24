@@ -18,7 +18,12 @@ const Icons = styled(Div)`
 
 `;
 
-
+const Message = styled(Div)`
+  color: ${props => props.theme.colors.white};
+  font-weight: ${props => props.theme.fontWeights.heavy};
+  margin: ${props => props.theme.space.xs};
+  font-size: ${props => props.theme.fontSizes.xl};
+`;
 
 
 function Footermessage(props) {
@@ -27,7 +32,7 @@ function Footermessage(props) {
       <Icons>
         {props.icons}
       </Icons>
-      <Text>{props.footerMessage}</Text>
+      <Message>{props.footerMessage}</Message>
     </Container>
   );
 }

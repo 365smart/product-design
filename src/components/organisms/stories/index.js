@@ -1,4 +1,4 @@
-import Productdetail from './Productdetail';
+import Productdetail from '..';
 
 export {
     Productdetail

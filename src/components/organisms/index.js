@@ -1,5 +1,11 @@
+import Help from './Help';
+import Myaccount from './Myaccount';
 import Productdetail from './Productdetail';
+import Search from './Search';
 
 export {
-    Productdetail
+    Help,
+    Myaccount,
+    Productdetail,
+    Search
 }

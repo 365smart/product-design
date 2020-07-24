@@ -56,6 +56,7 @@ border-radius:50%;
 position:fixed;
 z-index:1;
 right:-40px;
+margin:auto;
 justify-content:center;
 align-items:center;
 transform: rotate(-90deg);
@@ -63,7 +64,7 @@ padding-bottom:${props => props.theme.space.xs};
 `;
 const SlideZone = styled(Div)`
 display: flex;
-justifyC-content: flex-start;
+justifyContent: flex-start;
 align-items: center;
 max-width: 100%;
 overflow: scroll;
@@ -74,31 +75,22 @@ padding-right: ${props => props.theme.space.sm};
 `;
 
 
-function Splash(props) {
+function Slider(props) {
   return (
     <Container {...props}>
       <Title variant="mdHead" value={props.sliderMessage} />
       <SlideZone>
         <IndicatorLeft><Icon name="angle-down-white" variant="forControls" /></IndicatorLeft>
-        <Slide variant="contain" name="Bellas" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="365Dining-black" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="Angelos" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="Drinks" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="Frutandvegi" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="Grillvalley" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="Saffronbloom" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="Speckledplate" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="Streetsiders" location="Diners/Logos" fileType="png" />
-        <Slide variant="contain" name="Worldwalkcafe" location="Diners/Logos" fileType="png" />';
+        {props.children}
         <IndicatorRight><Icon name="angle-down-white" variant="forControls" /></IndicatorRight>
       </SlideZone>
     </Container>
   );
 }
 
-Splash.propTypes = {
+Slider.propTypes = {
   /** Message that will appear above the slideset*/
   sliderMessage: PropTypes.string
 }
 
-export default Splash;
+export default Slider;

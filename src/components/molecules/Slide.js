@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Div, Img, Button, Icon } from '../atoms';
+import { Itemaddremove } from '../molecules';
 import PropTypes from 'prop-types';
 import {
   color,
@@ -26,7 +27,8 @@ const StyledDiv = styled('div')(
     borderColor: '#C2C2C5',
     margin: '0.5rem',
     borderRadius: '1rem',
-    position: 'relative'
+    position: 'relative',
+    overflow: 'hidden'
   },
   color,
   layout,
@@ -49,14 +51,26 @@ const StyledDiv = styled('div')(
 
 
 function Slide(props) {
-  return (
-    <StyledDiv {...props}>
-      <Div variant="controlsTR">
-        <Button variant="xlCircleGhostDark"><Icon name="info" variant="forControls" /></Button>
-      </Div>
-      <Img variant={props.variant} name={props.name} location={props.location} fileType={props.fileType} />
-    </StyledDiv>
-  );
+  const controlSet = props.controlSet;
+  if (controlSet === 'info') {
+    return (
+      <StyledDiv {...props}>
+        <Div variant="controlsTR">
+          <Button variant="xlCircleGhostDark"><Icon name="info" variant="forControls" /></Button>
+        </Div>
+        <Img variant={props.variant} name={props.name} location={props.location} fileType={props.fileType} />
+      </StyledDiv>
+    );
+  }
+  if (controlSet === 'addsub') {
+    return (
+      <StyledDiv {...props}>
+        <Itemaddremove onProductDetail={props.onProductDetail} />
+        <Img variant={props.variant} name={props.name} location={props.location} fileType={props.fileType} />
+      </StyledDiv>
+    );
+  }
+
 }
 
 Slide.propTypes = {

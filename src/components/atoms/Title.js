@@ -36,6 +36,21 @@ const StyledTitle = styled('div')(
         margin: '0px',
         alignItems: 'flex-end',
         lineHeight: 'normal',
+      },
+      xxlHeadSticky: {
+        width: '100%',
+        padding: 'md',
+        fontSize: 'xxl',
+        fontWeight: 'heavy',
+        margin: '0px',
+        alignItems: 'flex-end',
+        lineHeight: 'normal',
+        position: 'sticky',
+        top: '0px',
+        zIndex: '1',
+        backgroundColor: 'white',
+        display: 'flex',
+        justifyContent: 'space-between'
       }
     }
   })

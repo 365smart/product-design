@@ -45,16 +45,11 @@ const StyledDiv = styled('div')(
   })
 );
 
-const CloseButton = styled(Button)`
-  position: absolute;
-  right: 16px;
-  top: 16px;
-`;
+
 
 function Modal(props) {
   return (
     <StyledDiv {...props}>
-      <CloseButton onClick={props.onClose}>Close</CloseButton>
       {props.children}
     </StyledDiv>
   );

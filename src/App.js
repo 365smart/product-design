@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Body, Img, Modal, Button } from './components/atoms';
-import { Splash, Footer, Header, Menusection, Itemaddremove } from './components/molecules';
-import { Productdetail } from './components/organisms';
+import { Body, Img, Modal, Button, Footer, Icon } from './components/atoms';
+import { Splash, Header, Menusection, Itemaddremove, Slider, Slideset, Footermessage, Footernav } from './components/molecules';
+import { Productdetail, Help, Search, Myaccount } from './components/organisms';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 
@@ -15,23 +15,55 @@ function App() {
       </Splash>
       <Header logoName="365Dining" logoLocation="Diners/Logos" logoFileType="png" bgName="365Dining" bgLocation="Diners/BG" status="Opens at 10:00 AM" bgFileType="jpg" />
       <Body variant="PBStandard">
-        <Button onClick={() => setModal(true)}>click this</Button>
-        <Menusection name="Specials" />
-        <Menusection name="Lunch" />
-        <Menusection name="Drinks" />
+        <Menusection name="Specials" onProductDetail={() => setModal('ProductDetail')} />
+        <Menusection name="Lunch" onProductDetail={() => setModal('ProductDetail')} />
+        <Menusection name="Drinks" onProductDetail={() => setModal('ProductDetail')} />
       </Body>
-      <Footer onClick={() => setModal(true)}/>
-
-
-      {modal === true ?
+      {/* <Footer onClick={() => setModal(true)} /> */}
+      <Footer>
+        <Slider sliderMessage="Tap for more choices">
+          <Slideset slideSet="diners" />
+        </Slider>
+        <Footermessage icons={<Icon name="barcode" />} footerMessage="Scan an item at any time" />
+        <Footernav onHelp={() => setModal('Help')} onSearch={() => setModal('Search')} onMyAccount={() => setModal('MyAccount')} navSet="main" onClose={() => setModal(false)} />
+      </Footer>
+      {modal === 'Help' ?
         (
-          <Modal onClose={() => setModal(false)}>
-            <Productdetail />
+          <Modal>
+            <Help onClose={() => setModal(false)} />
           </Modal>
         )
         :
         (
-          <div />
+          modal === 'Search' ?
+            (
+              <Modal>
+                <Search onClose={() => setModal(false)} />
+              </Modal>
+            )
+            :
+            (
+              modal === 'MyAccount' ?
+                (
+                  <Modal>
+                    <Myaccount onClose={() => setModal(false)} />
+                  </Modal>
+                )
+                :
+                (
+                  modal === 'ProductDetail' ?
+                    (
+                      <Modal>
+                        <Productdetail onClose={() => setModal(false)} />
+                      </Modal>
+                    )
+                    :
+                    (
+                      <div />
+                    )
+                )
+            )
+
         )
       }
 

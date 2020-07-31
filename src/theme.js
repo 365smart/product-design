@@ -5,6 +5,7 @@ export default {
         light: '#EAEAE5',
         black: '#000000',
         white: '#FFFFFF',
+        grey: '#999999',
         primary: '#2555D9',
         secondary: '#727179',
         text: '#21212D',
@@ -14,7 +15,9 @@ export default {
         danger: '#FF4C5B',
         success: '#00BF6F',
         warning: '#FFCC1E',
-        ghostdark: 'rgba(33,33,45,.5)'
+        tab: '#EAEAEB',
+        ghostdark: 'rgba(33,33,45,.5)',
+        mistdark: 'rgba(33,33,45,.05)'
     },
     // layout
     sizes: {

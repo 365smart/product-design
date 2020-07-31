@@ -41,11 +41,8 @@ const StyledDiv = styled(Div)(
 function Splash(props) {
   return (
     <StyledDiv {...props}>
-
       {props.images}
       {props.children}
-
-
     </StyledDiv>
   );
 }

@@ -3,5 +3,6 @@ import { Dietary } from '..';
 
 export default { title: 'molecules.Dietary' };
 
-export const ProductDietaryInfo = () => <Dietary cal="450" />
+export const CardDietaryInfo = () => <Dietary cal="450" dietarySet="productCard" />
+export const DetailDietaryInfo = () => <Dietary cal="450" dietarySet="productDetail" />
 

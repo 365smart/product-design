@@ -8,6 +8,8 @@ import theme from './theme';
 function App() {
   const [modal, setModal] = useState(false);
 
+
+
   return (
     <ThemeProvider theme={theme}>
       <Splash images={<Img variant="cover" name="doritos" location="Products/Upsales" fileType="jpg" />}>
@@ -15,11 +17,10 @@ function App() {
       </Splash>
       <Header logoName="365Dining" logoLocation="Diners/Logos" logoFileType="png" bgName="365Dining" bgLocation="Diners/BG" status="Opens at 10:00 AM" bgFileType="jpg" />
       <Body variant="PBStandard">
-        <Menusection name="Specials" onProductDetail={() => setModal('ProductDetail')} />
-        <Menusection name="Lunch" onProductDetail={() => setModal('ProductDetail')} />
-        <Menusection name="Drinks" onProductDetail={() => setModal('ProductDetail')} />
+        <Menusection name="Specials" onProductDetail={() => setModal('ProductDetail')} dietarySet="productCard" />
+        <Menusection name="Lunch" onProductDetail={() => setModal('ProductDetail')} dietarySet="productCard" />
+        <Menusection name="Drinks" onProductDetail={() => setModal('ProductDetail')} dietarySet="productCard" />
       </Body>
-      {/* <Footer onClick={() => setModal(true)} /> */}
       <Footer>
         <Slider sliderMessage="Tap for more choices">
           <Slideset slideSet="diners" />
@@ -54,7 +55,7 @@ function App() {
                   modal === 'ProductDetail' ?
                     (
                       <Modal>
-                        <Productdetail onClose={() => setModal(false)} />
+                        <Productdetail cal="723" basePrice="8.25" onClose={() => setModal(false)} dietarySet="productDetail" />
                       </Modal>
                     )
                     :

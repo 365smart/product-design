@@ -50,6 +50,28 @@ const StyledButton = styled('button')(
         lineHeight: 'md',
         borderRadius: 'lg',
       },
+      mdPill: {
+        px: 'sm',
+        py: 'xxs',
+        fontSize: 'md',
+        lineHeight: 'md',
+        borderRadius: 'xl',
+        margin: 'xxxs',
+        fontWeight: 'light',
+        backgroundColor: 'tab',
+        color: 'black'
+      },
+      mdPillActive: {
+        px: 'sm',
+        py: 'xxs',
+        fontSize: 'md',
+        lineHeight: 'md',
+        borderRadius: 'xl',
+        margin: 'xxxs',
+        fontWeight: 'light',
+        backgroundColor: 'primary',
+        color: 'white'
+      },
       lg: {
         px: 'md',
         py: 'xxs',

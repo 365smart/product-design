@@ -8,7 +8,10 @@ const StyledTitle = styled('div')(
   {
     margin: 0,
     padding: 0,
-    userSelect: 'none'
+    userSelect: 'none',
+    position: 'relative',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   color,
   layout,
@@ -28,9 +31,20 @@ const StyledTitle = styled('div')(
         lineHeight: 'normal',
         width: '100%',
       },
-      xxlHead: {
+      xlHead: {
+        display: 'flex',
         width: '100%',
         padding: 'md',
+        fontSize: 'xl',
+        fontWeight: 'heavy',
+        margin: '0px',
+        lineHeight: 'normal'
+      },
+      xxlHead: {
+        display: 'flex',
+        width: '100%',
+        padding: 'md',
+        paddingBottom: '0px',
         fontSize: 'xxl',
         fontWeight: 'heavy',
         margin: '0px',
@@ -38,6 +52,7 @@ const StyledTitle = styled('div')(
         lineHeight: 'normal',
       },
       xxlHeadSticky: {
+        display: 'flex',
         width: '100%',
         padding: 'md',
         fontSize: 'xxl',

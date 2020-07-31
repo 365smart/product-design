@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Div, Button, Text, Icon } from '../atoms';
 import PropTypes from 'prop-types';
@@ -68,13 +68,15 @@ justify-content: center;
 
 function Footernav(props) {
   const navSet = props.navSet;
+  const [totalPrice, setTotalPrice] = useState(null);
+
   if (navSet === 'main') {
     return (
       <Container {...props} >
         <FooterNav icons={<Icon name="help" />} label="Help" onClick={props.onHelp} />
         <FooterNav icons={<Icon name="myaccount" />} label="My Account" onClick={props.onMyAccount} />
         <FooterNav icons={<Icon name="search" />} label="Search" onClick={props.onSearch} />
-        <FooterAction label="$14.50" subMessage={<Text variant="md" color="white">View Order</Text>} />
+        {/* <FooterAction label="$14.50" subMessage={<Text variant="md" color="white">View Order</Text>} /> */}
       </Container>
     );
   }
@@ -82,7 +84,7 @@ function Footernav(props) {
     return (
       <Container {...props} >
         <FooterNavMin icons={<Icon name="close" />} label="Close" onClick={props.onClose} />
-        <FooterAction label="$14.50" subMessage={<Text variant="md" color="white">View Order</Text>} />
+        <FooterAction onClick={props.onClose} label={'$' + props.totalCost} subMessage={<Text variant="md" color="white">Add to Cart</Text>} />
       </Container>
     );
   }

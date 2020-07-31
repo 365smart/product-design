@@ -24,6 +24,13 @@ const StyledIcon = styled('img')(
         borderRadius: 'mdlg',
         margin: 'xxxxs',
       },
+      md: {
+        display: 'flex',
+        height: 'md',
+        width: 'md',
+        borderRadius: 'xs',
+        margin: 'xxxxs',
+      },
       forControls: {
         height: '100%',
         width: '100%',

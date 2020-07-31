@@ -49,16 +49,17 @@ function Card(props) {
         <Container {...props}>
             <Plate>
                 <Splash variant={props.splashVariant} images={<Img variant={props.imageVariant} name={props.name} location={props.location} fileType={props.fileType} />} >
-                    <Itemaddremove onProductDetail={props.onProductDetail} />
+                    <Itemaddremove onProductDetail={props.onProductDetail} price={props.price} />
                 </Splash>
                 <Statrow>
                     <Text>{props.name}</Text>
                     <Text>{props.price}</Text>
                 </Statrow>
-                <Dietary cal={props.cal} />
+                <Dietary cal={props.cal} dietarySet={props.dietarySet} />
             </Plate>
         </Container >
     );
 }
+
 
 export default Card;

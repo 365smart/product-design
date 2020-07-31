@@ -1,6 +1,7 @@
 import React from 'react';
 import { Splash } from '..';
 import { Img, Div, Button, Icon } from '../../atoms';
+import { Itemaddremove } from '../../molecules';
 
 export default { title: 'molecules.Splash' };
 
@@ -15,9 +16,6 @@ export const AutoHeightVariant = () =>
 
 export const WithControls = () =>
     <Splash images={<Img variant="cover" name="bella1" location="Products" fileType="jpg" />} >
-        <Div variant="controlsTR">
-            <Button variant="controlGhostDark"><Icon variant="forControls" name="info" /></Button>
-            <Button variant="control" ><Icon variant="forControls" name="add" /></Button>
-        </Div>
+        <Itemaddremove />
     </Splash>
 

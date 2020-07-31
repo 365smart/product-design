@@ -13,6 +13,9 @@ export const allIcons = () =>
 export const micon = () =>
   <Icon name="nogluten" variant="sm" />
   ;
+export const medium = () =>
+  <Icon name="nogluten" variant="md" />
+  ;
 export const forControls = () =>
   <Button variant="control">
     <Icon name="info" variant="forControls" />

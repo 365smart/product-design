@@ -349,11 +349,10 @@ function Productdetail(props) {
             )}
 
         </AccordionSection>
-              Cart Total: {props.cartTotal} <br/>
               Add Amount: {props.addAmount} <br/>
-            Total Price: {totalPrice} <br/>
-
-              New Total: {props.newTotal}
+              Product Price: {totalPrice} <br/>
+              Cart Total: {props.cartTotal} <br/>
+              Next Cart Total: {props.newTotal}
       </Body>
       <Footer>
         <Slider sliderMessage="You might want to add">

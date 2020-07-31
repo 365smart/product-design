@@ -84,7 +84,7 @@ function Footernav(props) {
     return (
       <Container {...props} >
         <FooterNavMin icons={<Icon name="close" />} label="Close" onClick={props.onClose} />
-        <FooterAction onClick={props.onClose} label={'$' + props.totalCost} subMessage={<Text variant="md" color="white">Add to Cart</Text>} />
+        <FooterAction onClick={props.onAdd} label={'$' + props.totalCost} subMessage={<Text variant="md" color="white">Add to Cart</Text>} />
       </Container>
     );
   }

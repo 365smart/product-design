@@ -371,13 +371,13 @@ function Productdetail(props) {
 
         </AccordionSection>
 
-
+              Cart Total: {props.cartTotal}
       </Body>
       <Footer>
         <Slider sliderMessage="You might want to add">
           <Slideset slideSet="products" />
         </Slider>
-        <Footernav navSet="product" totalCost={totalPrice} onClose={props.onClose} />
+        <Footernav navSet="product" onAdd={props.onAdd} totalCost={totalPrice} onClose={props.onClose} />
       </Footer>
     </StyledDiv >
   );

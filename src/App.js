@@ -5,11 +5,11 @@ import { Productdetail, Help, Search, Myaccount } from './components/organisms';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 
-function App() {
+function App(props) {
   const [modal, setModal] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
-
-
+  const [addAmount, setAddAmount] = useState(0);
+  const newTotal = addAmount + cartTotal;
 
   return (
     <ThemeProvider theme={theme}>
@@ -66,10 +66,12 @@ function App() {
                       <Modal>
                         <Productdetail
                           cal="723"
-                          basePrice="8.25"
+                          basePrice={8.25}
                           onClose={() => setModal(false)}
-                          onAdd={() => setCartTotal(cartTotal + 10)}
-                          price={props.price}
+                          addAmount={addAmount}
+                          setAddAmount={setAddAmount}
+                          newTotal={newTotal}
+                          onAdd={() => setCartTotal(newTotal)}
                           dietarySet="productDetail"
                           cartTotal={cartTotal} />
                       </Modal>

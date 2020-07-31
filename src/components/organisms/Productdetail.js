@@ -50,7 +50,7 @@ flex:0 1 0;
 align-items:center;
 font-size: ${props => props.theme.fontSizes.lg};
 button{
-    margin:0px; 
+    margin:0px;
     background-color:inherit;
 }
 
@@ -61,7 +61,7 @@ const AccordionContent = styled(Div)`
 
   .nutrition-info {
     max-width:704px;
-    margin:auto;  
+    margin:auto;
 
 
     h2 {
@@ -93,7 +93,7 @@ const AccordionContent = styled(Div)`
         span {
           font-size: 32px;
         }
-     
+
     }
     hr {
      padding:0px;
@@ -147,7 +147,6 @@ background-color:${props => props.theme.colors.tab};
 color:${props => props.theme.colors.black};
 font-weight:${props => props.theme.fontWeights.light};
 `;
-
 
 function Productdetail(props) {
   const [isToggled, setToggled] = useState(false);
@@ -213,20 +212,9 @@ function Productdetail(props) {
       else {
         setModifierPrice(modifierPrice + price);
         setTotalPrice(modifierPrice + price + parseFloat(props.basePrice));
-
-
       }
     }
-
   }
-
-
-
-
-
-
-
-
 
   return (
     <StyledDiv {...props}>
@@ -295,12 +283,9 @@ function Productdetail(props) {
             (
               <div />
             )}
-
         </AccordionSection>
 
-
         <AccordionSection>
-
           <AccordionHead>
             <Text>Add a Note</Text>
             <AccordionControl bg={"addANote" === isToggled ? "black" : "primary"} >
@@ -318,12 +303,9 @@ function Productdetail(props) {
             (
               <div />
             )}
-
         </AccordionSection>
 
-
         <AccordionSection>
-
           <AccordionHead>
             <Text>Nutritional Information</Text>
             <AccordionControl bg={"nutrition" === isToggled ? "black" : "primary"} >
@@ -335,9 +317,7 @@ function Productdetail(props) {
 
           {isToggled === "nutrition" ?
             (
-              < AccordionContent >
-
-
+              <AccordionContent >
                 <div class="nutrition-info">
                   <div class="stattitle">Nutrition Facts</div>
                   <Statrow><h1>Calories</h1><span>888</span></Statrow>
@@ -361,7 +341,6 @@ function Productdetail(props) {
                       general nutrition advice
                   </Footnote>
                 </div>
-
               </AccordionContent>
             )
             :
@@ -370,16 +349,25 @@ function Productdetail(props) {
             )}
 
         </AccordionSection>
+              Cart Total: {props.cartTotal} <br/>
+              Add Amount: {props.addAmount} <br/>
+            Total Price: {totalPrice} <br/>
 
-              Cart Total: {props.cartTotal}
+              New Total: {props.newTotal}
       </Body>
       <Footer>
         <Slider sliderMessage="You might want to add">
           <Slideset slideSet="products" />
         </Slider>
-        <Footernav navSet="product" onAdd={props.onAdd} totalCost={totalPrice} onClose={props.onClose} />
+        <Footernav
+          navSet="product"
+          onAdd={props.onAdd}
+          onClick={props.setAddAmount(totalPrice)}
+          addAmount={totalPrice}
+          totalCost={totalPrice}
+          onClose={props.onClose} />
       </Footer>
-    </StyledDiv >
+    </StyledDiv>
   );
 }
 
@@ -389,4 +377,3 @@ Productdetail.propTypes = {
 }
 
 export default Productdetail;
-

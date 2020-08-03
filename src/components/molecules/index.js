@@ -5,6 +5,7 @@ import Footernav from './Footernav';
 import Header from './Header';
 import Itemaddremove from './Itemaddremove';
 import Menusection from './Menusection';
+import Nutrition from './Nutrition';
 import Slide from './Slide';
 import Slider from './Slider';
 import Slideset from './Slideset';
@@ -18,6 +19,7 @@ export {
     Header,
     Itemaddremove,
     Menusection,
+    Nutrition,
     Slide,
     Slider,
     Slideset,

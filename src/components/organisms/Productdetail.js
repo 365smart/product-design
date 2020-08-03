@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Div, Button, Icon, Body, Img, Footer, Title, Text } from '../atoms';
-import { Dietary, Splash, Itemaddremove, Footernav, Slider, Slideset } from '../molecules';
+import { Dietary, Splash, Itemaddremove, Footernav, Nutrition, Slider, Slideset } from '../molecules';
 
 const StyledDiv = styled(Div)`
 width:100%;
@@ -57,8 +57,6 @@ button{
 `;
 const AccordionContent = styled(Div)`
 
-
-
   .nutrition-info {
     max-width:704px;
     margin:auto;  
@@ -103,29 +101,8 @@ const AccordionContent = styled(Div)`
   }
 
 `;
-const Statrow = styled(Div)`
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid black;
-span:last-child{
-  font-weight:900;
-}
-h1 {
-  margin:0px;
-  padding:0px;
-  font-size: 28px;
-  display: inline;
-}
-`;
-const Footnote = styled(Div)`
-border-top: 4px solid black;
-display:flex;
-justify-content:flex-start;
-align-items:flex-start;
-span{
-  font-size:2em;
-}
-`;
+
+
 
 
 const AccordionOption = styled(Div)`
@@ -338,29 +315,52 @@ function Productdetail(props) {
               < AccordionContent >
 
 
-                <div class="nutrition-info">
-                  <div class="stattitle">Nutrition Facts</div>
-                  <Statrow><h1>Calories</h1><span>888</span></Statrow>
-                  <Statrow justifyContent="flex-end"><h3>% Daily Value*</h3></Statrow>
-                  <Statrow><span ><h2>Total Fat</h2>33g</span><span>51%</span></Statrow>
-                  <Statrow><span><h3>Saturated Fat</h3>5g</span><span>26%</span></Statrow>
-                  <Statrow><span><h2>Cholesterol</h2>56mg</span><span>19%</span></Statrow>
-                  <Statrow><span ><h2>Sodium</h2>632mg</span><span >26%</span></Statrow>
-                  <Statrow><span ><h2>Total Carbohydrate</h2>101g</span><span >%</span></Statrow>
-                  <Statrow><span><h3>Dietary Fiber</h3>12g</span><span >49%</span></Statrow>
-                  <Statrow><span><h3>Total Sugars</h3>9g</span><span >%</span></Statrow>
-                  <Statrow><span><h2>Protein</h2>41g</span><span>82%</span></Statrow>
-                  <hr />
-                  <Statrow><span><h3>calcium</h3>41mg</span> <span >82%</span></Statrow>
-                  <Statrow><span><h3>Iron</h3>5mg</span><span >28%</span></Statrow>
-                  <Statrow><span ><h3>potassium</h3> 747mg</span><span>21%</span></Statrow>
-                  <Footnote>
-                    <span>*</span>
-                      The % Daily Value (DV) tels how much a nutrient in a serving of food
-                      contributes to a daily diet. 2,000 calories a day is used for
-                      general nutrition advice
-                  </Footnote>
-                </div>
+                <Nutrition
+                  totalFat={33}
+                  totalFatUnits={'g'}
+                  totalFatPercent={51}
+
+                  saturatedFat={5}
+                  saturatedFatUnits={'g'}
+                  saturatedFatPercent={26}
+
+                  cholesterol={56}
+                  cholesterolUnits={'mg'}
+                  cholesterolPercent={19}
+
+                  sodium={632}
+                  sodiumUnits={'mg'}
+                  sodiumPercent={26}
+
+                  totalCarbs={101}
+                  totalCarbsUnits={'g'}
+                  totalCarbsPercent={0}
+
+                  dietaryFiber={12}
+                  dietaryFiberUnits={'g'}
+                  dietaryFiberPercent={49}
+
+                  totalSugars={9}
+                  totalSugarsUnits={'g'}
+                  totalSugarsPercent={0}
+
+                  protein={41}
+                  proteinUnits={'g'}
+                  proteinPercent={82}
+
+                  calcium={41}
+                  calciumUnits={'mg'}
+                  calciumPercent={82}
+
+                  iron={5}
+                  ironUnits={'mg'}
+                  ironPercent={28}
+
+                  potassium={747}
+                  potassiumUnits={'mg'}
+                  potassiumPercent={21}
+                />
+
 
               </AccordionContent>
             )
@@ -371,7 +371,7 @@ function Productdetail(props) {
 
         </AccordionSection>
 
-              Cart Total: {props.cartTotal}
+
       </Body>
       <Footer>
         <Slider sliderMessage="You might want to add">

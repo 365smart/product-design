@@ -50,7 +50,7 @@ flex:0 1 0;
 align-items:center;
 font-size: ${props => props.theme.fontSizes.lg};
 button{
-    margin:0px; 
+    margin:0px;
     background-color:inherit;
 }
 
@@ -59,7 +59,7 @@ const AccordionContent = styled(Div)`
 
   .nutrition-info {
     max-width:704px;
-    margin:auto;  
+    margin:auto;
 
 
     h2 {
@@ -91,7 +91,7 @@ const AccordionContent = styled(Div)`
         span {
           font-size: 32px;
         }
-     
+
     }
     hr {
      padding:0px;
@@ -124,7 +124,6 @@ background-color:${props => props.theme.colors.tab};
 color:${props => props.theme.colors.black};
 font-weight:${props => props.theme.fontWeights.light};
 `;
-
 
 function Productdetail(props) {
   const [isToggled, setToggled] = useState(false);
@@ -190,20 +189,9 @@ function Productdetail(props) {
       else {
         setModifierPrice(modifierPrice + price);
         setTotalPrice(modifierPrice + price + parseFloat(props.basePrice));
-
-
       }
     }
-
   }
-
-
-
-
-
-
-
-
 
   return (
     <StyledDiv {...props}>
@@ -272,12 +260,9 @@ function Productdetail(props) {
             (
               <div />
             )}
-
         </AccordionSection>
 
-
         <AccordionSection>
-
           <AccordionHead>
             <Text>Add a Note</Text>
             <AccordionControl bg={"addANote" === isToggled ? "black" : "primary"} >
@@ -295,12 +280,9 @@ function Productdetail(props) {
             (
               <div />
             )}
-
         </AccordionSection>
 
-
         <AccordionSection>
-
           <AccordionHead>
             <Text>Nutritional Information</Text>
             <AccordionControl bg={"nutrition" === isToggled ? "black" : "primary"} >
@@ -312,6 +294,7 @@ function Productdetail(props) {
 
           {isToggled === "nutrition" ?
             (
+<<<<<<< HEAD
               < AccordionContent >
 
 
@@ -362,6 +345,32 @@ function Productdetail(props) {
                 />
 
 
+=======
+              <AccordionContent >
+                <div class="nutrition-info">
+                  <div class="stattitle">Nutrition Facts</div>
+                  <Statrow><h1>Calories</h1><span>888</span></Statrow>
+                  <Statrow justifyContent="flex-end"><h3>% Daily Value*</h3></Statrow>
+                  <Statrow><span ><h2>Total Fat</h2>33g</span><span>51%</span></Statrow>
+                  <Statrow><span><h3>Saturated Fat</h3>5g</span><span>26%</span></Statrow>
+                  <Statrow><span><h2>Cholesterol</h2>56mg</span><span>19%</span></Statrow>
+                  <Statrow><span ><h2>Sodium</h2>632mg</span><span >26%</span></Statrow>
+                  <Statrow><span ><h2>Total Carbohydrate</h2>101g</span><span >%</span></Statrow>
+                  <Statrow><span><h3>Dietary Fiber</h3>12g</span><span >49%</span></Statrow>
+                  <Statrow><span><h3>Total Sugars</h3>9g</span><span >%</span></Statrow>
+                  <Statrow><span><h2>Protein</h2>41g</span><span>82%</span></Statrow>
+                  <hr />
+                  <Statrow><span><h3>calcium</h3>41mg</span> <span >82%</span></Statrow>
+                  <Statrow><span><h3>Iron</h3>5mg</span><span >28%</span></Statrow>
+                  <Statrow><span ><h3>potassium</h3> 747mg</span><span>21%</span></Statrow>
+                  <Footnote>
+                    <span>*</span>
+                      The % Daily Value (DV) tels how much a nutrient in a serving of food
+                      contributes to a daily diet. 2,000 calories a day is used for
+                      general nutrition advice
+                  </Footnote>
+                </div>
+>>>>>>> 6670199da459e8e6b77ceb47bcf1988432d5bfee
               </AccordionContent>
             )
             :
@@ -370,16 +379,29 @@ function Productdetail(props) {
             )}
 
         </AccordionSection>
+<<<<<<< HEAD
 
 
+=======
+              Add Amount: {props.addAmount} <br/>
+              Product Price: {totalPrice} <br/>
+              Cart Total: {props.cartTotal} <br/>
+              Next Cart Total: {props.newTotal}
+>>>>>>> 6670199da459e8e6b77ceb47bcf1988432d5bfee
       </Body>
       <Footer>
         <Slider sliderMessage="You might want to add">
           <Slideset slideSet="products" />
         </Slider>
-        <Footernav navSet="product" onAdd={props.onAdd} totalCost={totalPrice} onClose={props.onClose} />
+        <Footernav
+          navSet="product"
+          onAdd={props.onAdd}
+          onClick={props.setAddAmount(totalPrice)}
+          addAmount={totalPrice}
+          totalCost={totalPrice}
+          onClose={props.onClose} />
       </Footer>
-    </StyledDiv >
+    </StyledDiv>
   );
 }
 
@@ -389,4 +411,3 @@ Productdetail.propTypes = {
 }
 
 export default Productdetail;
-

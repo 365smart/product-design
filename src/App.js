@@ -8,16 +8,9 @@ import theme from './theme';
 function App(props) {
   const [modal, setModal] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
-<<<<<<< HEAD
-  function addAndClose() {
-    setModal(false);
-    setCartTotal(cartTotal + 10)
-  }
-
-=======
   const [addAmount, setAddAmount] = useState(0);
   const newTotal = addAmount + cartTotal;
->>>>>>> 6670199da459e8e6b77ceb47bcf1988432d5bfee
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -35,13 +28,13 @@ function App(props) {
           <Slideset slideSet="diners" />
         </Slider>
         <Footermessage icons={<Icon name="barcode" />} footerMessage="Scan an item at any time" />
-        <Footernav totalCost={cartTotal} onHelp={() => setModal('Help')} onSearch={() => setModal('Search')} onMyAccount={() => setModal('MyAccount')} navSet="main" onClose={() => setModal(false)} />
+        <Footernav newTotal={newTotal.toFixed(2)} onHelp={() => setModal('Help')} onSearch={() => setModal('Search')} onMyAccount={() => setModal('MyAccount')} navSet="main" onClose={() => setModal(false)} />
 
 
       </Footer>
       {modal === 'Help' ?
         (
-          <Modal>
+          <Modal>y
             <Help onClose={() => setModal(false)} />
           </Modal>
         )
@@ -70,14 +63,10 @@ function App(props) {
                           cal="723"
                           basePrice={8.25}
                           onClose={() => setModal(false)}
-<<<<<<< HEAD
-                          onAdd={addAndClose}
-=======
                           addAmount={addAmount}
                           setAddAmount={setAddAmount}
                           newTotal={newTotal}
                           onAdd={() => setCartTotal(newTotal)}
->>>>>>> 6670199da459e8e6b77ceb47bcf1988432d5bfee
                           dietarySet="productDetail"
                           cartTotal={cartTotal} />
                       </Modal>

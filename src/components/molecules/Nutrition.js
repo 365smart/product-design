@@ -78,34 +78,33 @@ function Nutrition(props) {
     <Container {...props}>
 
       <div class="stattitle">Nutrition Facts</div>
-      <Titlerow><span>Calories</span><span>888</span></Titlerow>
+      <Titlerow><span>Calories</span><span>{props.totalCalories}</span></Titlerow>
 
       <Statrow justifyContent="flex-end"><Subname>% Daily Value*</Subname></Statrow>
 
-      {props.totalFat > 0 ? <Statrow><Stat ><Name>Total Fat</Name>{props.totalFat}{props.totalFatUnits}</Stat><Rda>{props.totalFatPercent}%</Rda></Statrow> : ""}
+      {props.totalFat != null ? <Statrow><Stat ><Name>Total Fat</Name>{props.totalFat}{props.totalFatUnits}</Stat><Rda>{props.totalFatPercent}%</Rda></Statrow> : ""}
 
+      {props.saturatedFat != null ? <Statrow><Stat><Subname>Saturated Fat</Subname>{props.saturatedFat}{props.saturatedFatUnits}</Stat><Rda>{props.saturatedFatPercent}%</Rda></Statrow> : ""}
 
-      <Statrow><Stat><Subname>Saturated Fat</Subname>{props.saturatedFat}{props.saturatedFatUnits}</Stat><Rda>{props.saturatedFatPercent}%</Rda></Statrow>
+      {props.cholesterol != null ? <Statrow><Stat><Name>Cholesterol</Name>{props.cholesterol}{props.cholesterolUnits}</Stat><Rda>{props.cholesterolPercent}%</Rda></Statrow> : ""}
 
-      <Statrow><Stat><Name>Cholesterol</Name>{props.cholesterol}{props.cholesterolUnits}</Stat><Rda>{props.cholesterolPercent}%</Rda></Statrow>
+      {props.sodium != null ? <Statrow><Stat ><Name>Sodium</Name>{props.sodium}{props.sodiumUnits}</Stat><Rda >{props.sodiumPercent}%</Rda></Statrow> : ""}
 
-      <Statrow><Stat ><Name>Sodium</Name>{props.sodium}{props.sodiumUnits}</Stat><Rda >{props.sodiumPercent}%</Rda></Statrow>
+      {props.totalCarbs != null ? <Statrow><Stat ><Name>Total Carbohydrate</Name>{props.totalCarbs}{props.totalCarbsUnits}</Stat><Rda >{props.totalCarbsPercent}%</Rda></Statrow> : ""}
 
-      <Statrow><Stat ><Name>Total Carbohydrate</Name>{props.totalCarbs}{props.totalCarbsUnits}</Stat><Rda >{props.totalCarbsPercent}%</Rda></Statrow>
+      {props.dietaryFiber != null ? <Statrow><Stat><Subname>Dietary Fiber</Subname>{props.dietaryFiber}{props.dietaryFiberUnits}</Stat><Rda >{props.dietaryFiberPercent}%</Rda></Statrow> : ""}
 
-      <Statrow><Stat><Subname>Dietary Fiber</Subname>{props.dietaryFiber}{props.dietaryFiberUnits}</Stat><Rda >{props.dietaryFiberPercent}%</Rda></Statrow>
+      {props.totalSugars != null ? <Statrow><Stat><Subname>Total Sugars</Subname>{props.totalSugars}{props.totalSugarsUnits}</Stat><Rda >{props.totalSugarsPercent}%</Rda></Statrow> : ""}
 
-      <Statrow><Stat><Subname>Total Sugars</Subname>{props.totalSugars}{props.totalSugarsUnits}</Stat><Rda >{props.totalSugarsPercent}%</Rda></Statrow>
-
-      <Statrow><Stat><Name>Protein</Name>{props.protein}{props.proteinUnits}</Stat><Rda>{props.proteinPercent}%</Rda></Statrow>
+      {props.protein != null ? <Statrow><Stat><Name>Protein</Name>{props.protein}{props.proteinUnits}</Stat><Rda>{props.proteinPercent}%</Rda></Statrow> : ""}
 
       <hr />
 
-      <Statrow><Stat><Subname>Calcium</Subname>{props.calcium}{props.calciumUnits}</Stat> <Rda >{props.calciumPercent}%</Rda></Statrow>
+      {props.calcium != null ? <Statrow><Stat><Subname>Calcium</Subname>{props.calcium}{props.calciumUnits}</Stat> <Rda >{props.calciumPercent}%</Rda></Statrow> : ""}
 
-      <Statrow><Stat><Subname>Iron</Subname>{props.iron}{props.ironUnits}</Stat><Rda >{props.ironPercent}%</Rda></Statrow>
+      {props.iron != null ? <Statrow><Stat><Subname>Iron</Subname>{props.iron}{props.ironUnits}</Stat><Rda >{props.ironPercent}%</Rda></Statrow> : ""}
 
-      <Statrow><Stat ><Subname>Potassium</Subname>{props.potassium}{props.potassiumUnits}</Stat><Rda>{props.potassiumPercent}%</Rda></Statrow>
+      {props.potassium != null ? <Statrow><Stat ><Subname>Potassium</Subname>{props.potassium}{props.potassiumUnits}</Stat><Rda>{props.potassiumPercent}%</Rda></Statrow> : ""}
 
       <Footnote>
 
@@ -119,10 +118,30 @@ function Nutrition(props) {
   )
 }
 Nutrition.propTypes = {
-  /** Used as title for section */
-  // name: PropTypes.string,
-
-
+  /** Used as Total Calories for section */
+  totalCalories: PropTypes.string,
+  /** Used as Total Fat for section */
+  totalFat: PropTypes.string,
+  /** Used as Saturated Fat for section */
+  saturatedFat: PropTypes.string,
+  /** Used as Cholesterol for section */
+  cholesterol: PropTypes.string,
+  /** Used as Sodium for section */
+  sodium: PropTypes.string,
+  /** Used as Total Carbs for section */
+  totalCarbs: PropTypes.string,
+  /** Used as Dietary Fiber for section */
+  dietaryFiber: PropTypes.string,
+  /** Used as Total Sugars for section */
+  totalSugars: PropTypes.string,
+  /** Used as Protein for section */
+  protein: PropTypes.string,
+  /** Used as Calcium for section */
+  calcium: PropTypes.string,
+  /** Used as Iron for section */
+  iron: PropTypes.string,
+  /** Used as Potassium for section */
+  potassium: PropTypes.string,
 }
 
 export default Nutrition;

@@ -5,6 +5,8 @@ export default { title: 'molecules.Nutrition' };
 export const StandardNutritionList = () =>
 
     <Nutrition
+        totalCalories={888}
+
         totalFat={33}
         totalFatUnits={'g'}
         totalFatPercent={51}

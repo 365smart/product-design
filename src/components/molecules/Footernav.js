@@ -77,8 +77,8 @@ function Footernav(props) {
         <FooterNav icons={<Icon name="myaccount" />} label="My Account" onClick={props.onMyAccount} />
         <FooterNav icons={<Icon name="search" />} label="Search" onClick={props.onSearch} />
         {
-          props.totalCost > 0 ?
-            (<FooterAction label="$14.50" subMessage={<Text variant="md" color="white">View Order</Text>} />)
+          props.newTotal > 0 ?
+            (<FooterAction label={'$' + props.newTotal} subMessage={<Text variant="md" color="white">View Order</Text>} />)
             :
             (<div />
             )
@@ -91,7 +91,19 @@ function Footernav(props) {
     return (
       <Container {...props} >
         <FooterNavMin icons={<Icon name="close" />} label="Close" onClick={props.onClose} />
-        <FooterAction onClick={props.onAdd} label={'$' + props.totalCost} subMessage={<Text variant="md" color="white">Add to Cart</Text>} />
+        <FooterAction
+          onClick={() => { props.onClose(); props.setAddAmount(props.addAmount); props.onAdd() }}
+          label={'$' + props.totalCost} subMessage={<Text variant="md" color="white">Add to Cart</Text>} />
+      </Container>
+    );
+  }
+  if (navSet === 'search') {
+    return (
+      <Container {...props} >
+        <FooterNavMin icons={<Icon name="close" />} label="Close" onClick={props.onClose} />
+        <FooterNav icons={<Icon name="help" />} label="Diners" onClick={props.onHelp} />
+        <FooterNav icons={<Icon name="myaccount" />} label="Categories" onClick={props.onMyAccount} />
+        <FooterNav icons={<Icon name="search" />} label="Products" onClick={props.onSearch} />
       </Container>
     );
   }

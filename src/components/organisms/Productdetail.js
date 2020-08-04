@@ -56,50 +56,6 @@ button{
 
 `;
 const AccordionContent = styled(Div)`
-
-  .nutrition-info {
-    max-width:704px;
-    margin:auto;
-
-
-    h2 {
-      margin: 0;
-      padding: 0;
-      font-size: 16px;
-      display: inline;
-    }
-
-    h3 {
-      font-weight: normal;
-      margin: 0;
-      padding:0px;
-      padding-left:15px;
-      font-size: 15px;
-      display: inline;
-    }
-    .stattitle{
-      font-size:32px;
-      font-weight:700;
-      border-bottom:8px solid black;
-    }
-
-    .statrow.right{
-      justify-content:flex-end;
-    }
-    .statrow.header{
-        border-bottom: 4px solid black;
-        span {
-          font-size: 32px;
-        }
-
-    }
-    hr {
-     padding:0px;
-     margin:0px;
-     border:4px solid black;
-    }
-  }
-
 `;
 
 
@@ -294,11 +250,10 @@ function Productdetail(props) {
 
           {isToggled === "nutrition" ?
             (
-<<<<<<< HEAD
               < AccordionContent >
-
-
                 <Nutrition
+                  totalCalories={888}
+
                   totalFat={33}
                   totalFatUnits={'g'}
                   totalFatPercent={51}
@@ -343,34 +298,6 @@ function Productdetail(props) {
                   potassiumUnits={'mg'}
                   potassiumPercent={21}
                 />
-
-
-=======
-              <AccordionContent >
-                <div class="nutrition-info">
-                  <div class="stattitle">Nutrition Facts</div>
-                  <Statrow><h1>Calories</h1><span>888</span></Statrow>
-                  <Statrow justifyContent="flex-end"><h3>% Daily Value*</h3></Statrow>
-                  <Statrow><span ><h2>Total Fat</h2>33g</span><span>51%</span></Statrow>
-                  <Statrow><span><h3>Saturated Fat</h3>5g</span><span>26%</span></Statrow>
-                  <Statrow><span><h2>Cholesterol</h2>56mg</span><span>19%</span></Statrow>
-                  <Statrow><span ><h2>Sodium</h2>632mg</span><span >26%</span></Statrow>
-                  <Statrow><span ><h2>Total Carbohydrate</h2>101g</span><span >%</span></Statrow>
-                  <Statrow><span><h3>Dietary Fiber</h3>12g</span><span >49%</span></Statrow>
-                  <Statrow><span><h3>Total Sugars</h3>9g</span><span >%</span></Statrow>
-                  <Statrow><span><h2>Protein</h2>41g</span><span>82%</span></Statrow>
-                  <hr />
-                  <Statrow><span><h3>calcium</h3>41mg</span> <span >82%</span></Statrow>
-                  <Statrow><span><h3>Iron</h3>5mg</span><span >28%</span></Statrow>
-                  <Statrow><span ><h3>potassium</h3> 747mg</span><span>21%</span></Statrow>
-                  <Footnote>
-                    <span>*</span>
-                      The % Daily Value (DV) tels how much a nutrient in a serving of food
-                      contributes to a daily diet. 2,000 calories a day is used for
-                      general nutrition advice
-                  </Footnote>
-                </div>
->>>>>>> 6670199da459e8e6b77ceb47bcf1988432d5bfee
               </AccordionContent>
             )
             :
@@ -379,15 +306,10 @@ function Productdetail(props) {
             )}
 
         </AccordionSection>
-<<<<<<< HEAD
-
-
-=======
-              Add Amount: {props.addAmount} <br/>
-              Product Price: {totalPrice} <br/>
-              Cart Total: {props.cartTotal} <br/>
-              Next Cart Total: {props.newTotal}
->>>>>>> 6670199da459e8e6b77ceb47bcf1988432d5bfee
+        {/* Add Amount: {props.addAmount} <br />
+              Product Price: {totalPrice} <br />
+              Cart Total: {props.cartTotal} <br />
+              Next Cart Total: {props.newTotal} */}
       </Body>
       <Footer>
         <Slider sliderMessage="You might want to add">
@@ -396,7 +318,7 @@ function Productdetail(props) {
         <Footernav
           navSet="product"
           onAdd={props.onAdd}
-          onClick={props.setAddAmount(totalPrice)}
+          setAddAmount={props.setAddAmount}
           addAmount={totalPrice}
           totalCost={totalPrice}
           onClose={props.onClose} />

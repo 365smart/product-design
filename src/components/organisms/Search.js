@@ -1,17 +1,11 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Div, Body, Text, Title, Button, Footer, Img } from '../atoms';
+import { Div, Body, Text, Title, Footer, Img } from '../atoms';
 import { Footernav, Splash, Itemaddremove } from '../molecules';
 
 const StyledDiv = styled(Div)`
-width:100%;
-`;
-
-const CloseButton = styled(Button)`
-  position: absolute;
-  right: 16px;
-  top: 16px;
+  width:100%;
 `;
 
 function Search(props) {
@@ -44,4 +38,3 @@ Search.propTypes = {
 }
 
 export default Search;
-

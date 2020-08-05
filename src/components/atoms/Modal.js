@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Div, Img, Button, Icon } from '.';
+import { Div } from '.';
 import PropTypes from 'prop-types';
 import {
   color,
@@ -12,9 +12,8 @@ import {
   typography,
   variant
 } from 'styled-system';
-import Productdetail from '../organisms/Productdetail';
 
-const StyledDiv = styled('div')(
+const StyledDiv = styled(Div)(
   {
     position: 'fixed',
     top: '0px',

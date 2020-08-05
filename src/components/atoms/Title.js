@@ -64,7 +64,6 @@ const StyledTitle = styled('div')(
         top: '0px',
         zIndex: '1',
         backgroundColor: 'white',
-        display: 'flex',
         justifyContent: 'space-between'
       }
     }

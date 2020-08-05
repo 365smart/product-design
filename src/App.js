@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Body, Img, Modal, Button, Footer, Icon } from './components/atoms';
+import { Body, Img, Modal, Footer, Icon } from './components/atoms';
 import { Splash, Header, Menusection, Itemaddremove, Slider, Slideset, Footermessage, Footernav } from './components/molecules';
 import { Productdetail, Help, Search, Myaccount } from './components/organisms';
 import { ThemeProvider } from 'styled-components';

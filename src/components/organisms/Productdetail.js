@@ -4,17 +4,18 @@ import { Div, Button, Icon, Body, Img, Footer, Title, Text } from '../atoms';
 import { Dietary, Splash, Itemaddremove, Footernav, Nutrition, Slider, Slideset } from '../molecules';
 
 const StyledDiv = styled(Div)`
-width:100%;
+  width:100%;
 `;
 
 const Details = styled(Div)`
-width:100%;
-background-color: ${props => props.theme.colors.mistdark};
-padding: ${props => props.theme.space.md};
-text-align:center;
+  width: 100%;
+  background-color: ${props => props.theme.colors.mistdark};
+  padding: ${props => props.theme.space.md};
+  text-align: center;
 `;
 
 const AccordionSection = styled(Div)``;
+
 const AccordionHead = styled(Div)`
 display: flex;
 width: 100%;
@@ -23,62 +24,64 @@ margin: 0px;
 font-size: ${props => props.theme.fontSizes.xl};
 font-weight: ${props => props.theme.fontWeights.heavy};
 justify-content: space-between;
-align-items:center;
+align-items: center;
 `;
+
 const AccordionSubhead = styled(Div)`
-display:flex;
-width: 100%;
-font-size: ${props => props.theme.fontSizes.lg};
-padding: ${props => props.theme.space.md};
-padding-bottom:${props => props.theme.space.xxs};
-padding-top:0px;
-align-items:center;
-line-height:1em;
+  display: flex;
+  width: 100%;
+  font-size: ${props => props.theme.fontSizes.lg};
+  padding: ${props => props.theme.space.md};
+  padding-bottom: ${props => props.theme.space.xxs};
+  padding-top: 0px;
+  align-items: center;
+  line-height: ${props => props.theme.lineHeights.lg};
 `;
+
 const AccordionNote = styled(Div)`
-color:${props => props.theme.colors.grey};
-font-size:${props => props.theme.fontSizes.md};
-margin:${props => props.theme.space.xxxs};
+color: ${props => props.theme.colors.grey};
+font-size: ${props => props.theme.fontSizes.md};
+margin: ${props => props.theme.space.xxxs};
 `;
+
 const AccordionControl = styled(Div)`
-display:flex;
+display: flex;
 color:  ${props => props.theme.colors.white};
 margin: ${props => props.theme.space.xxs};
 border-radius: ${props => props.theme.radii.xl};
-padding:0px;
-flex:0 1 0;
-align-items:center;
+padding: 0px;
+flex: 0 1 0;
+align-items: center;
 font-size: ${props => props.theme.fontSizes.lg};
 button{
-    margin:0px;
-    background-color:inherit;
+  margin:0px;
+  background-color: inherit;
 }
-
 `;
+
 const AccordionContent = styled(Div)`
 `;
 
-
-
-
 const AccordionOption = styled(Div)`
-padding-bottom: ${props => props.theme.space.md}
+  padding-bottom: ${props => props.theme.space.md}
 `;
+
 const Tabs = styled(Div)`
-display:flex;
-justify-content:flex-start;
-flex-wrap:wrap;
-width:100%;
-padding: ${props => props.theme.space.md};
-padding-bottom:0px;
-padding-top:0px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: ${props => props.theme.space.md};
+  padding-bottom: 0px;
+  padding-top: 0px;
 `;
+
 const Tab = styled(Button)`
-border-radius:${props => props.theme.radii.xl};
-margin: ${props => props.theme.space.xxxs};
-background-color:${props => props.theme.colors.tab};
-color:${props => props.theme.colors.black};
-font-weight:${props => props.theme.fontWeights.light};
+  border-radius: ${props => props.theme.radii.xl};
+  margin: ${props => props.theme.space.xxxs};
+  background-color: ${props => props.theme.colors.tab};
+  color: ${props => props.theme.colors.black};
+  font-weight: ${props => props.theme.fontWeights.light};
 `;
 
 function Productdetail(props) {
@@ -122,8 +125,6 @@ function Productdetail(props) {
       }
     }
   }
-
-
 
   function toggleToppings(name, price) {
     if (toppingsIsToggled === name) {
@@ -181,7 +182,7 @@ function Productdetail(props) {
 
           {isToggled === "modifiers" ?
             (
-              < AccordionContent >
+              <AccordionContent>
                 <AccordionOption>
                   <AccordionSubhead>Meat Temperature <AccordionNote>(Select One)</AccordionNote></AccordionSubhead>
                   <Tabs>
@@ -250,7 +251,7 @@ function Productdetail(props) {
 
           {isToggled === "nutrition" ?
             (
-              < AccordionContent >
+              <AccordionContent>
                 <Nutrition
                   totalCalories={888}
 

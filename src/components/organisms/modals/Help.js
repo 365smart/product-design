@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Div, Body, Text, Button } from '../atoms';
+import { Div, Body, Text, Button } from '../../atoms';
 
 const StyledDiv = styled(Div)`
 
@@ -13,23 +13,22 @@ const CloseButton = styled(Button)`
   top: 16px;
 `;
 
-
-function Myaccount(props) {
+function Help(props) {
   return (
     <StyledDiv {...props}>
       {props.children}
       <Body>
         <CloseButton onClick={props.onClose}>Close</CloseButton>
-        <Text variant="xxl">My Account</Text>
+        <Text variant="xxl">Help</Text>
       </Body>
     </StyledDiv>
   );
 }
 
-Myaccount.propTypes = {
+Help.propTypes = {
   /** Image type */
   // variant: PropTypes.string,
 }
 
-export default Myaccount;
+export default Help;
 

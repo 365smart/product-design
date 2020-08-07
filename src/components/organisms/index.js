@@ -1,11 +1,13 @@
-import Help from './Help';
-import Myaccount from './Myaccount';
-import Productdetail from './Productdetail';
-import Search from './Search';
+import Help from './modals/Help';
+import Myaccount from './modals/Myaccount';
+import Productadded from './Productadded';
+import Productdetail from './modals/Productdetail';
+import Search from './modals/Search';
 
 export {
     Help,
     Myaccount,
+    Productadded,
     Productdetail,
     Search
 }

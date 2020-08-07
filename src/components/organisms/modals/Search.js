@@ -1,8 +1,8 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Div, Body, Text, Title, Footer, Img } from '../atoms';
-import { Footernav, Splash, Itemaddremove } from '../molecules';
+import { Div, Body, Text, Title, Footer, Img } from '../../atoms';
+import { Footernav, Splash, Itemaddremove } from '../../molecules';
 
 const StyledDiv = styled(Div)`
   width:100%;

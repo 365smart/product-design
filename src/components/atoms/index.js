@@ -8,6 +8,7 @@ import Img from './Img';
 import Modal from './Modal';
 import Text from './Text';
 import Title from './Title';
+import Tray from './Tray';
 
 export {
     Body,
@@ -18,5 +19,6 @@ export {
     Img,
     Modal,
     Text,
-    Title
+    Title,
+    Tray
 }

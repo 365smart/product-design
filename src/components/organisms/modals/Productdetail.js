@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Div, Button, Icon, Body, Img, Footer, Title, Text } from '../atoms';
-import { Dietary, Splash, Itemaddremove, Footernav, Nutrition, Slider, Slideset } from '../molecules';
+import { Div, Button, Icon, Body, Img, Footer, Title, Text } from '../../atoms';
+import { Dietary, Splash, Itemaddremove, Footernav, Nutrition, Slider, Slideset } from '../../molecules';
 
 const StyledDiv = styled(Div)`
   width:100%;
@@ -158,8 +158,8 @@ function Productdetail(props) {
       </Splash>
       <Body variant="PBStandard">
         <Title variant="xxlHeadSticky">
-          <Text>Name of Product</Text>
-          <Text>${props.basePrice}</Text>
+          <Text>{props.productName}</Text>
+          <Text>${props.basePrice.toFixed(2)}</Text>
         </Title>
         <Details>
           <Dietary cal={props.cal} dietarySet={props.dietarySet} />

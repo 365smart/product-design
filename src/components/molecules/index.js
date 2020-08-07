@@ -1,3 +1,4 @@
+import Buttontile from './Buttontile';
 import Card from './Card';
 import Dietary from './Dietary';
 import Footermessage from './Footermessage';
@@ -12,6 +13,7 @@ import Slideset from './Slideset';
 import Splash from './Splash';
 
 export {
+    Buttontile,
     Card,
     Dietary,
     Footermessage,

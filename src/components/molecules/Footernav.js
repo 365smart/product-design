@@ -70,6 +70,7 @@ function Footernav(props) {
   if (navSet === 'main') {
     return (
       <Container {...props} >
+        {props.children}
         <FooterButton icons={<Icon name="help" />} label="Help" onClick={props.onHelp} />
         <FooterButton icons={<Icon name="myaccount" />} label="My Account" onClick={props.onMyAccount} />
         <FooterButton icons={<Icon name="search" />} label="Search" onClick={props.onSearch} />
@@ -87,16 +88,18 @@ function Footernav(props) {
   if (navSet === 'product') {
     return (
       <Container {...props} >
+        {props.children}
         <FooterNavMin icons={<Icon name="close" />} label="Close" onClick={props.onClose} />
         <FooterAction
           onClick={() => { props.onClose(); props.setAddAmount(props.addAmount); props.onAdd() }}
-          label={'$' + props.totalCost} subMessage={<Text variant="md" color="white">Add to Cart</Text>} />
+          label={'$' + props.totalCost.toFixed(2)} subMessage={<Text variant="md" color="white">Add to Cart</Text>} />
       </Container>
     );
   }
   if (navSet === 'search') {
     return (
       <Container {...props} >
+        {props.children}
         <FooterNavMin icons={<Icon name="close" />} label="Close" onClick={props.onClose} />
         <FooterButton icons={<Icon name="help" />} label="Diners" onClick={props.onHelp} />
         <FooterButton icons={<Icon name="myaccount" />} label="Categories" onClick={props.onMyAccount} />

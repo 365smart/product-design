@@ -41,11 +41,11 @@ function Card(props) {
     <Container {...props}>
       <Plate>
         <Splash variant={props.splashVariant} images={<Img variant={props.imageVariant} name={props.name} location={props.location} fileType={props.fileType} />} >
-          <Itemaddremove onProductDetail={props.onProductDetail} price={props.price} />
+          <Itemaddremove setProductPrice={props.setProductPrice} setProductName={props.setProductName} productName={props.publicName} onProductDetail={props.onProductDetail} price={props.price} />
         </Splash>
         <Statrow>
-          <Text>{props.name}</Text>
-          <Text>{props.price}</Text>
+          <Text>{props.publicName}</Text>
+          <Text>{props.price.toFixed(2)}</Text>
         </Statrow>
         <Dietary cal={props.cal} dietarySet={props.dietarySet} />
       </Plate>

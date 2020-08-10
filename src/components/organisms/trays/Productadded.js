@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Div, Button, Icon } from '../atoms';
+import { Div, Button, Icon } from '../../atoms';
 
 
 const StyledDiv = styled(Div)`
@@ -45,7 +45,7 @@ function Productadded(props) {
       <Subtitle color="white">Placing in your cart</Subtitle>
       <Title color="white" >${props.addAmount.toFixed(2)}</Title>
       <Title color="white" >{props.productName}</Title>
-      <Buttontile icons={<Icon name="help" />} label="Help" />
+      <Buttontile icons={<Icon name="startover" />} label="Remove It" onClick={props.removeIt} />
     </StyledDiv>
   );
 }

@@ -25,7 +25,7 @@ const FooterButton = styled(Button)`
   border-radius: 0px;
   color: white;
   padding: ${props => props.theme.space.md};
-  font-size: ${props => props.theme.space.md};
+  font-size: ${props => props.theme.space.sm};
   font-weight: ${props => props.theme.fontWeights.heavy};
 `;
 
@@ -42,7 +42,7 @@ const FooterNavMin = styled(Button)`
   border-radius: 0px;
   color: white;
   padding: ${props => props.theme.space.md};
-  font-size: ${props => props.theme.space.md};
+  font-size: ${props => props.theme.space.sm};
   font-weight: ${props => props.theme.fontWeights.heavy};
 `;
 
@@ -76,7 +76,12 @@ function Footernav(props) {
         <FooterButton icons={<Icon name="search" />} label="Search" onClick={props.onSearch} />
         {
           props.newTotal > 0 ?
-            (<FooterAction label={'$' + props.newTotal} subMessage={<Text variant="md" color="white">View Order</Text>} />)
+            (
+              <Div display="flex">
+                <FooterButton icons={<Icon name="startover" />} label="Start Over" onClick={props.onStartOver} />
+                <FooterAction label={'$' + props.newTotal} subMessage={<Text variant="sm" color="white">View Order</Text>} />
+              </Div>
+            )
             :
             (<div />
             )
@@ -85,6 +90,8 @@ function Footernav(props) {
       </Container>
     );
   }
+
+
   if (navSet === 'product') {
     return (
       <Container {...props} >
@@ -92,10 +99,12 @@ function Footernav(props) {
         <FooterNavMin icons={<Icon name="close" />} label="Close" onClick={props.onClose} />
         <FooterAction
           onClick={() => { props.onClose(); props.setAddAmount(props.addAmount); props.onAdd() }}
-          label={'$' + props.totalCost.toFixed(2)} subMessage={<Text variant="md" color="white">Add to Cart</Text>} />
+          label={'$' + props.totalCost.toFixed(2)} subMessage={<Text variant="sm" color="white">Add to Cart</Text>} />
       </Container>
     );
   }
+
+
   if (navSet === 'search') {
     return (
       <Container {...props} >
@@ -107,6 +116,16 @@ function Footernav(props) {
       </Container>
     );
   }
+
+  if (navSet === 'default') {
+    return (
+      <Container {...props} >
+        {props.children}
+      </Container>
+    );
+  }
+
+
 
 
 

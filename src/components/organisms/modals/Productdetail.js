@@ -100,6 +100,8 @@ function Productdetail(props) {
   const [toppingsIsToggled, setToppingsToggled] = useState(false);
   const [caloriesAddedCheese, setCaloriesCheese] = useState(0);
   const [caloriesAddedToppings, setCaloriesToppings] = useState(0);
+  const [costAddedToppings, setCostAddedToppings] = useState(0);
+  // const [costAdded, setCostAdded] = useState(0);
   const [modifierPrice, setModifierPrice] = useState(0.00);
   const [totalPrice, setTotalPrice] = useState(props.basePrice);
 
@@ -138,14 +140,22 @@ function Productdetail(props) {
       if (caloriesAddedToppings <= 0) {
 
         setCaloriesToppings(0);
+        setCostAddedToppings(0);
         setCaloriesToppings(caloriesAddedToppings + 250);
         setModifierPrice(modifierPrice + price);
         setTotalPrice(modifierPrice + price + parseFloat(props.basePrice));
 
       }
       else {
-        setModifierPrice(modifierPrice + price);
-        setTotalPrice(modifierPrice + price + parseFloat(props.basePrice));
+        if (price === 0) {
+          setTotalPrice(parseFloat(props.basePrice));
+          setModifierPrice(price);
+        }
+        else {
+          setModifierPrice(price);
+          setTotalPrice(price + parseFloat(props.basePrice));
+        }
+
       }
     }
   }
@@ -172,7 +182,11 @@ function Productdetail(props) {
             <Text>Modifiers</Text>
             <AccordionControl bg={"modifiers" === isToggled ? "black" : "primary"} >
               {caloriesAddedToppings + caloriesAddedCheese > 0 ? (
-                <Div display="flex" alignItems="center"><Text ml="sm" mr="xxs" color="white" >{caloriesAddedToppings + caloriesAddedCheese}</Text><Text fontSize="sm" color="white">CALS</Text></Div>
+                <Div display="flex" alignItems="center">
+                  <Text ml="sm" mr="xxs" color="white" >{caloriesAddedToppings + caloriesAddedCheese}</Text>
+                  <Text fontSize="sm" color="white">CALS</Text>
+                  {modifierPrice > 0 ? (<Text ml="sm" mr="xxs" color="white" >{modifierPrice.toFixed(2)}</Text>) : (<div />)}
+                </Div>
               ) : (<div />)}
               <Button variant="xlCircle" >
                 <Icon variant="forControls" name={"modifiers" === isToggled ? "chevron-up-white" : "chevron-down-white"} onClick={() => toggleTarget('modifiers')} />
